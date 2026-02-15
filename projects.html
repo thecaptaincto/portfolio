@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - captaincto</title>
+    <link rel="stylesheet" href="css/styles-fixed.css">
+    <link rel="stylesheet" href="css/pages-fixed.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sky-layer" id="skyLayer"></div>
+    <div class="skyline-layer" id="skylineLayer">
+        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
+            <g class="buildings">
+                <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
+                <rect x="180" y="300" width="90" height="300" class="building" data-speed="0.25"/>
+                <rect x="280" y="380" width="110" height="220" class="building" data-speed="0.35"/>
+                <rect x="420" y="280" width="140" height="320" class="building building-tall" data-speed="0.4"/>
+                <rect x="570" y="320" width="100" height="280" class="building" data-speed="0.3"/>
+                <rect x="680" y="250" width="160" height="350" class="building building-tall" data-speed="0.45"/>
+                <rect x="870" y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
+                <rect x="1060" y="220" width="140" height="380" class="building building-tall" data-speed="0.48"/>
+                <rect x="1210" y="260" width="120" height="340" class="building" data-speed="0.42"/>
+                <rect x="1360" y="310" width="150" height="290" class="building" data-speed="0.38"/>
+                <rect x="1520" y="200" width="170" height="400" class="building building-tall" data-speed="0.47"/>
+                <rect x="1700" y="340" width="100" height="260" class="building" data-speed="0.32"/>
+                <rect x="1810" y="370" width="90" height="230" class="building" data-speed="0.28"/>
+            </g>
+            <g class="window-lights"></g>
+        </svg>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">CTO</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">My Projects</h1>
+                <p class="page-subtitle">Ideas brought to life, one commit at a time</p>
+            </div>
+        </section>
+
+        <!-- Project Detail Sections -->
+        <section class="project-detail section-reveal" id="neonchat">
+            <div class="container">
+                <div class="project-header">
+                    <span class="project-tag">Featured</span>
+                    <h2 class="project-detail-title">NeonChat</h2>
+                    <p class="project-tagline">Privacy-first messaging with aesthetic soul</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-description-block">
+                        <h3 class="block-title">Overview</h3>
+                        <p class="block-text">
+                            NeonChat is a real-time messaging application built for communities who value both privacy 
+                            and aesthetics. It features end-to-end encryption, custom themes inspired by East Asian 
+                            night aesthetics, and a lantern-inspired UI that makes secure communication feel warm and inviting.
+                        </p>
+                        <p class="block-text">
+                            The project started because I noticed most secure messaging apps feel cold and corporate. 
+                            I wanted to prove that privacy doesn't have to sacrifice beauty or user experience.
+                        </p>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>End-to-end encryption for all messages</li>
+                            <li>Custom theme system with lantern-inspired designs</li>
+                            <li>Real-time messaging with WebSocket connections</li>
+                            <li>Group chat with role-based permissions</li>
+                            <li>File sharing with encryption</li>
+                            <li>Responsive design that works beautifully on all devices</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Technical Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> React, Redux, Socket.io Client
+                            </div>
+                            <div class="tech-item">
+                                <strong>Backend:</strong> Node.js, Express, Socket.io
+                            </div>
+                            <div class="tech-item">
+                                <strong>Database:</strong> MongoDB with Mongoose
+                            </div>
+                            <div class="tech-item">
+                                <strong>Security:</strong> AES-256 encryption, JWT auth
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Challenges & Solutions</h3>
+                        <p class="block-text">
+                            The biggest challenge was implementing end-to-end encryption while maintaining real-time 
+                            performance. I solved this by implementing a hybrid encryption system that uses symmetric 
+                            encryption for messages and asymmetric encryption for key exchange.
+                        </p>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link-button">View Live Demo →</a>
+                        <a href="#" class="project-link-button secondary">View Code →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-detail section-reveal" id="skylineweather">
+            <div class="container">
+                <div class="project-header">
+                    <span class="project-tag">Creative</span>
+                    <h2 class="project-detail-title">SkylineWeather</h2>
+                    <p class="project-tagline">Weather forecasts as visual poetry</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-description-block">
+                        <h3 class="block-title">Overview</h3>
+                        <p class="block-text">
+                            SkylineWeather transforms boring weather data into beautiful visual stories. The cityscape 
+                            changes dynamically with the weather—rain, fog, sunshine, and night—creating an immersive 
+                            experience that makes checking the forecast actually enjoyable.
+                        </p>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Dynamic skyline that reflects current weather conditions</li>
+                            <li>Animated transitions between weather states</li>
+                            <li>7-day forecast with hourly breakdowns</li>
+                            <li>Location-based weather detection</li>
+                            <li>Beautiful data visualizations for temperature and precipitation</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Technical Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> Vanilla JavaScript, CSS Animations
+                            </div>
+                            <div class="tech-item">
+                                <strong>Graphics:</strong> SVG, Canvas API
+                            </div>
+                            <div class="tech-item">
+                                <strong>API:</strong> OpenWeather API
+                            </div>
+                            <div class="tech-item">
+                                <strong>Design:</strong> Custom illustrations and animations
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link-button">View Live Demo →</a>
+                        <a href="#" class="project-link-button secondary">View Code →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-detail section-reveal" id="heritage">
+            <div class="container">
+                <div class="project-header">
+                    <span class="project-tag">Cultural</span>
+                    <h2 class="project-detail-title">Heritage Archive</h2>
+                    <p class="project-tagline">Preserving stories for future generations</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-description-block">
+                        <h3 class="block-title">Overview</h3>
+                        <p class="block-text">
+                            Heritage Archive is a digital preservation platform for cultural stories, historical photographs, 
+                            and family memories. It's built to honor the past while making it accessible and engaging for 
+                            future generations through modern technology.
+                        </p>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Upload and organize historical photos with metadata</li>
+                            <li>Timeline view for chronological storytelling</li>
+                            <li>OCR for extracting text from old documents</li>
+                            <li>Collaborative editing and annotation</li>
+                            <li>Export collections as beautiful PDFs or web galleries</li>
+                            <li>Works offline as a Progressive Web App</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Technical Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> Vue.js, Vuex
+                            </div>
+                            <div class="tech-item">
+                                <strong>Backend:</strong> Firebase (Auth, Firestore, Storage)
+                            </div>
+                            <div class="tech-item">
+                                <strong>Image Processing:</strong> Sharp, Tesseract.js
+                            </div>
+                            <div class="tech-item">
+                                <strong>PWA:</strong> Service Workers, IndexedDB
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link-button">View Live Demo →</a>
+                        <a href="#" class="project-link-button secondary">View Code →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-detail section-reveal" id="lanterntimer">
+            <div class="container">
+                <div class="project-header">
+                    <span class="project-tag">Productivity</span>
+                    <h2 class="project-detail-title">LanternTimer</h2>
+                    <p class="project-tagline">Focus illuminated</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-description-block">
+                        <h3 class="block-title">Overview</h3>
+                        <p class="block-text">
+                            LanternTimer is a minimalist productivity timer that combines the Pomodoro technique with 
+                            calming visual design. As you work, a virtual lantern glows softly, dimming during breaks 
+                            to signal transition. It's designed for deep work sessions with minimal distraction.
+                        </p>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Customizable work/break intervals</li>
+                            <li>Ambient lantern glow that responds to your focus state</li>
+                            <li>Optional background sounds (rain, cafe, silence)</li>
+                            <li>Session statistics and productivity insights</li>
+                            <li>Minimal, distraction-free interface</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Technical Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> Vanilla JavaScript
+                            </div>
+                            <div class="tech-item">
+                                <strong>Animation:</strong> Web Animations API, CSS
+                            </div>
+                            <div class="tech-item">
+                                <strong>Storage:</strong> Local Storage
+                            </div>
+                            <div class="tech-item">
+                                <strong>Audio:</strong> Web Audio API
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link-button">View Live Demo →</a>
+                        <a href="#" class="project-link-button secondary">View Code →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-detail section-reveal" id="blog">
+            <div class="container">
+                <div class="project-header">
+                    <span class="project-tag">Writing</span>
+                    <h2 class="project-detail-title">CodeNight Blog</h2>
+                    <p class="project-tagline">Documenting the journey</p>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-description-block">
+                        <h3 class="block-title">Overview</h3>
+                        <p class="block-text">
+                            CodeNight is my personal development blog where I share what I'm learning, write tutorials, 
+                            and explore the intersection of culture and code. It features a custom CMS, beautiful 
+                            typography, and a reading experience optimized for long-form content.
+                        </p>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Custom content management with MDX</li>
+                            <li>Syntax highlighting for code examples</li>
+                            <li>Tag-based navigation and search</li>
+                            <li>Reading time estimates</li>
+                            <li>Dark mode optimized for night reading</li>
+                            <li>RSS feed for subscribers</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-description-block">
+                        <h3 class="block-title">Technical Stack</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Framework:</strong> Next.js
+                            </div>
+                            <div class="tech-item">
+                                <strong>Content:</strong> MDX, Contentlayer
+                            </div>
+                            <div class="tech-item">
+                                <strong>Styling:</strong> Tailwind CSS
+                            </div>
+                            <div class="tech-item">
+                                <strong>Deployment:</strong> Vercel
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link-button">Visit Blog →</a>
+                        <a href="#" class="project-link-button secondary">View Code →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-projects section-reveal">
+            <div class="container">
+                <h2 class="section-title">More Projects Coming Soon</h2>
+                <p class="section-subtitle">
+                    I'm always working on something new. Check back soon for more updates, or 
+                    <a href="contact.html" class="inline-link">get in touch</a> if you'd like to collaborate.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">CTO Productions</p>
+                <p class="footer-subtext">© 2024 captaincto. Crafted with care under the lantern light.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

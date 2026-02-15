@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - captaincto</title>
+    <link rel="stylesheet" href="css/styles-fixed.css">
+    <link rel="stylesheet" href="css/pages-fixed.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sky-layer" id="skyLayer"></div>
+    <div class="skyline-layer" id="skylineLayer">
+        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
+            <g class="buildings">
+                <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
+                <rect x="180" y="300" width="90" height="300" class="building" data-speed="0.25"/>
+                <rect x="280" y="380" width="110" height="220" class="building" data-speed="0.35"/>
+                <rect x="420" y="280" width="140" height="320" class="building building-tall" data-speed="0.4"/>
+                <rect x="570" y="320" width="100" height="280" class="building" data-speed="0.3"/>
+                <rect x="680" y="250" width="160" height="350" class="building building-tall" data-speed="0.45"/>
+                <rect x="870" y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
+                <rect x="1060" y="220" width="140" height="380" class="building building-tall" data-speed="0.48"/>
+                <rect x="1210" y="260" width="120" height="340" class="building" data-speed="0.42"/>
+                <rect x="1360" y="310" width="150" height="290" class="building" data-speed="0.38"/>
+                <rect x="1520" y="200" width="170" height="400" class="building building-tall" data-speed="0.47"/>
+                <rect x="1700" y="340" width="100" height="260" class="building" data-speed="0.32"/>
+                <rect x="1810" y="370" width="90" height="230" class="building" data-speed="0.28"/>
+            </g>
+            <g class="window-lights"></g>
+        </svg>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">CTO</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Skills & Tools</h1>
+                <p class="page-subtitle">Building with purpose, learning with passion</p>
+            </div>
+        </section>
+
+        <section class="skills-detailed section-reveal">
+            <div class="container">
+                <div class="skills-intro">
+                    <p class="intro-text">
+                        I'm an intermediate developer with a strong foundation in frontend technologies and a growing 
+                        backend skillset. I'm constantly learning, experimenting, and pushing myself to build better 
+                        things every day.
+                    </p>
+                </div>
+
+                <div class="skills-section">
+                    <h2 class="skills-category-title">Frontend Development</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">💻</div>
+                            <h3 class="skill-card-title">HTML & CSS</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Semantic HTML5, CSS3 with animations, Flexbox, Grid, responsive design, 
+                                accessibility best practices, and modern layout techniques.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">⚡</div>
+                            <h3 class="skill-card-title">JavaScript</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate-Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                ES6+, async/await, promises, DOM manipulation, event handling, modules, 
+                                and modern JavaScript patterns.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">⚛️</div>
+                            <h3 class="skill-card-title">React</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Hooks, component architecture, state management (Redux, Context API), 
+                                React Router, and performance optimization.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">🎨</div>
+                            <h3 class="skill-card-title">UI/UX Design</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate-Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                User-centered design, wireframing, prototyping, visual design principles, 
+                                color theory, and creating accessible interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2 class="skills-category-title">Backend & Tools</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">🟢</div>
+                            <h3 class="skill-card-title">Node.js</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Express.js, RESTful APIs, middleware, authentication, and server-side 
+                                JavaScript fundamentals.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">🗄️</div>
+                            <h3 class="skill-card-title">Databases</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Beginner-Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                MongoDB, Firebase, basic SQL, database design, and working with ORMs 
+                                like Mongoose.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">🔧</div>
+                            <h3 class="skill-card-title">Git & GitHub</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Version control, branching, merging, pull requests, collaborative workflows, 
+                                and GitHub Actions basics.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">📦</div>
+                            <h3 class="skill-card-title">Build Tools</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Webpack, Vite, npm/yarn, module bundlers, and modern development workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2 class="skills-category-title">Additional Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">🎭</div>
+                            <h3 class="skill-card-title">Animations</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate-Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                CSS animations, Web Animations API, GSAP basics, scroll-triggered effects, 
+                                and micro-interactions.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">🎯</div>
+                            <h3 class="skill-card-title">SVG & Graphics</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                SVG manipulation, Canvas API, creating custom graphics, and data visualization.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">📱</div>
+                            <h3 class="skill-card-title">Responsive Design</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Advanced</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Mobile-first approach, media queries, fluid layouts, touch interactions, 
+                                and cross-device testing.
+                            </p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">🔐</div>
+                            <h3 class="skill-card-title">Web Security</h3>
+                            <div class="skill-level">
+                                <span class="level-text">Beginner-Intermediate</span>
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <p class="skill-description">
+                                Authentication, JWT, CORS, basic encryption, secure coding practices, 
+                                and OWASP fundamentals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-section">
+                    <h2 class="section-title">Currently Learning</h2>
+                    <div class="learning-grid">
+                        <div class="learning-item">
+                            <div class="learning-icon">📚</div>
+                            <h3 class="learning-title">TypeScript</h3>
+                            <p class="learning-desc">Adding type safety to my JavaScript projects</p>
+                        </div>
+                        <div class="learning-item">
+                            <div class="learning-icon">🌐</div>
+                            <h3 class="learning-title">GraphQL</h3>
+                            <p class="learning-desc">Modern API development and data fetching</p>
+                        </div>
+                        <div class="learning-item">
+                            <div class="learning-icon">🐳</div>
+                            <h3 class="learning-title">Docker</h3>
+                            <p class="learning-desc">Containerization and deployment workflows</p>
+                        </div>
+                        <div class="learning-item">
+                            <div class="learning-icon">🧪</div>
+                            <h3 class="learning-title">Testing</h3>
+                            <p class="learning-desc">Jest, React Testing Library, E2E testing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">CTO Productions</p>
+                <p class="footer-subtext">© 2024 captaincto. Crafted with care under the lantern light.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
+</body>
+</html>
