@@ -1,13 +1,12 @@
 // ================================================
 // LANTERN CITY PORTFOLIO - MAIN JAVASCRIPT
-// Handles animations, parallax, interactions
+// Fixed version with improved animations
 // ================================================
 
 // ============================================
 // UTILITY FUNCTIONS
 // ============================================
 
-// Throttle function for performance
 function throttle(func, delay) {
     let lastCall = 0;
     return function(...args) {
@@ -18,7 +17,6 @@ function throttle(func, delay) {
     };
 }
 
-// Debounce function
 function debounce(func, delay) {
     let timeoutId;
     return function(...args) {
@@ -27,7 +25,6 @@ function debounce(func, delay) {
     };
 }
 
-// Check if element is in viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -37,7 +34,7 @@ function isInViewport(element) {
 }
 
 // ============================================
-// NAVIGATION FUNCTIONALITY
+// NAVIGATION - ALWAYS VISIBLE
 // ============================================
 
 class Navigation {
@@ -47,11 +44,13 @@ class Navigation {
         this.navMenu = document.getElementById('navMenu');
         this.navLinks = document.querySelectorAll('.nav-link');
         
-        this.init();
+        if (this.nav) {
+            this.init();
+        }
     }
     
     init() {
-        // Scroll effect
+        // Scroll effect - nav always visible, just changes appearance
         window.addEventListener('scroll', throttle(() => {
             if (window.scrollY > 100) {
                 this.nav.classList.add('scrolled');
@@ -73,32 +72,6 @@ class Navigation {
                 this.navMenu.classList.remove('active');
             });
         });
-        
-        // Active link on scroll
-        this.updateActiveLink();
-        window.addEventListener('scroll', throttle(() => {
-            this.updateActiveLink();
-        }, 200));
-    }
-    
-    updateActiveLink() {
-        const sections = document.querySelectorAll('section[id]');
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        this.navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
     }
 }
 
@@ -109,7 +82,9 @@ class Navigation {
 class ScrollProgress {
     constructor() {
         this.progressBar = document.getElementById('scrollProgress');
-        this.init();
+        if (this.progressBar) {
+            this.init();
+        }
     }
     
     init() {
@@ -129,37 +104,35 @@ class Skyline {
     constructor() {
         this.buildings = document.querySelectorAll('.building');
         this.windowLightsContainer = document.querySelector('.window-lights');
-        this.init();
+        
+        if (this.buildings.length > 0 && this.windowLightsContainer) {
+            this.init();
+        }
     }
     
     init() {
-        // Generate window lights
         this.generateWindowLights();
         
-        // Parallax effect on scroll
         window.addEventListener('scroll', throttle(() => {
             this.parallaxEffect();
         }, 50));
     }
     
     generateWindowLights() {
-        this.buildings.forEach((building, index) => {
+        this.buildings.forEach((building) => {
             const x = parseFloat(building.getAttribute('x'));
             const y = parseFloat(building.getAttribute('y'));
             const width = parseFloat(building.getAttribute('width'));
             const height = parseFloat(building.getAttribute('height'));
             
-            // Calculate number of windows based on building size
             const windowsX = Math.floor(width / 15);
             const windowsY = Math.floor(height / 20);
             
             for (let i = 0; i < windowsX; i++) {
                 for (let j = 0; j < windowsY; j++) {
-                    // Random chance for window to be lit
                     if (Math.random() > 0.4) {
                         const windowX = x + (i * 15) + 5;
                         const windowY = y + (j * 20) + 8;
-                        const delay = Math.random() * 20;
                         
                         const window = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
                         window.setAttribute('x', windowX);
@@ -167,7 +140,6 @@ class Skyline {
                         window.setAttribute('width', '4');
                         window.setAttribute('height', '6');
                         window.setAttribute('class', 'window-light');
-                        window.style.setProperty('--delay', delay);
                         
                         this.windowLightsContainer.appendChild(window);
                     }
@@ -180,7 +152,7 @@ class Skyline {
         const scrolled = window.scrollY;
         
         this.buildings.forEach(building => {
-            const speed = parseFloat(building.getAttribute('data-speed'));
+            const speed = parseFloat(building.getAttribute('data-speed')) || 0.3;
             const yOffset = -(scrolled * speed);
             building.style.transform = `translateY(${yOffset}px)`;
         });
@@ -188,14 +160,17 @@ class Skyline {
 }
 
 // ============================================
-// PARTICLE SYSTEM
+// ENHANCED PARTICLE SYSTEM
 // ============================================
 
 class ParticleSystem {
     constructor() {
         this.container = document.getElementById('particles');
-        this.particleCount = 20;
-        this.init();
+        this.particleCount = 30;
+        
+        if (this.container) {
+            this.init();
+        }
     }
     
     init() {
@@ -212,13 +187,55 @@ class ParticleSystem {
         const startX = Math.random() * 100;
         particle.style.left = startX + '%';
         
+        // Random size
+        const size = 2 + Math.random() * 3;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
         // Random animation delay and duration
-        const delay = Math.random() * 15;
-        const duration = 15 + Math.random() * 10;
+        const delay = Math.random() * 20;
+        const duration = 20 + Math.random() * 15;
         particle.style.animationDelay = delay + 's';
         particle.style.animationDuration = duration + 's';
         
+        // Random horizontal drift
+        const drift = -50 + Math.random() * 100;
+        particle.style.setProperty('--drift', drift + 'px');
+        
         this.container.appendChild(particle);
+    }
+}
+
+// ============================================
+// IMPROVED LANTERN ANIMATION
+// ============================================
+
+class LanternAnimation {
+    constructor() {
+        this.lanterns = document.querySelectorAll('.lantern');
+        
+        if (this.lanterns.length > 0) {
+            this.init();
+        }
+    }
+    
+    init() {
+        this.lanterns.forEach((lantern, index) => {
+            // Add subtle random movement
+            this.animateLantern(lantern, index);
+        });
+    }
+    
+    animateLantern(lantern, index) {
+        const baseDelay = index * 500;
+        
+        setInterval(() => {
+            const randomX = (Math.random() - 0.5) * 15;
+            const randomRotate = (Math.random() - 0.5) * 4;
+            
+            lantern.style.transition = 'transform 3s ease-in-out';
+            lantern.style.transform = `translate(${randomX}px, 0) rotate(${randomRotate}deg)`;
+        }, 4000 + baseDelay);
     }
 }
 
@@ -229,14 +246,15 @@ class ParticleSystem {
 class SectionReveal {
     constructor() {
         this.sections = document.querySelectorAll('.section-reveal');
-        this.init();
+        
+        if (this.sections.length > 0) {
+            this.init();
+        }
     }
     
     init() {
-        // Initial check
         this.checkSections();
         
-        // Check on scroll
         window.addEventListener('scroll', throttle(() => {
             this.checkSections();
         }, 100));
@@ -259,7 +277,10 @@ class SkillBars {
     constructor() {
         this.skillFills = document.querySelectorAll('.skill-fill');
         this.animated = false;
-        this.init();
+        
+        if (this.skillFills.length > 0) {
+            this.init();
+        }
     }
     
     init() {
@@ -271,14 +292,18 @@ class SkillBars {
     animateSkills() {
         if (this.animated) return;
         
-        const skillSection = document.getElementById('skills-preview');
+        const skillSection = document.getElementById('skills-preview') || 
+                            document.querySelector('.skills-categories');
+        
         if (!skillSection) return;
         
         if (isInViewport(skillSection)) {
-            this.skillFills.forEach(fill => {
-                const skillValue = fill.getAttribute('data-skill');
-                fill.style.setProperty('--skill-width', skillValue + '%');
-                fill.classList.add('animated');
+            this.skillFills.forEach((fill, index) => {
+                setTimeout(() => {
+                    const skillValue = fill.getAttribute('data-skill');
+                    fill.style.setProperty('--skill-width', skillValue + '%');
+                    fill.classList.add('animated');
+                }, index * 100);
             });
             this.animated = true;
         }
@@ -300,14 +325,13 @@ class SmoothScroll {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 
-                // Ignore empty hash
-                if (href === '#') return;
+                if (href === '#' || href === '#!') return;
                 
                 e.preventDefault();
                 const target = document.querySelector(href);
                 
                 if (target) {
-                    const offset = 80; // Account for fixed nav
+                    const offset = 80;
                     const targetPosition = target.offsetTop - offset;
                     
                     window.scrollTo({
@@ -321,97 +345,34 @@ class SmoothScroll {
 }
 
 // ============================================
-// LANTERN FLOAT ANIMATION ENHANCEMENT
-// ============================================
-
-class LanternAnimation {
-    constructor() {
-        this.lanterns = document.querySelectorAll('.lantern');
-        this.init();
-    }
-    
-    init() {
-        this.lanterns.forEach(lantern => {
-            const floatSpeed = parseFloat(lantern.getAttribute('data-float'));
-            
-            // Add random movement
-            setInterval(() => {
-                const randomX = (Math.random() - 0.5) * 20;
-                const randomY = (Math.random() - 0.5) * 30;
-                lantern.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomX * 0.1}deg)`;
-            }, 3000 + Math.random() * 2000);
-        });
-    }
-}
-
-// ============================================
-// CURSOR GLOW EFFECT (Desktop only)
-// ============================================
-
-class CursorGlow {
-    constructor() {
-        this.glow = null;
-        this.isMobile = window.innerWidth < 768;
-        if (!this.isMobile) {
-            this.init();
-        }
-    }
-    
-    init() {
-        // Create glow element
-        this.glow = document.createElement('div');
-        this.glow.style.position = 'fixed';
-        this.glow.style.width = '300px';
-        this.glow.style.height = '300px';
-        this.glow.style.borderRadius = '50%';
-        this.glow.style.background = 'radial-gradient(circle, rgba(255, 179, 71, 0.15), transparent 70%)';
-        this.glow.style.pointerEvents = 'none';
-        this.glow.style.zIndex = '9999';
-        this.glow.style.transform = 'translate(-50%, -50%)';
-        this.glow.style.transition = 'opacity 0.3s ease';
-        this.glow.style.opacity = '0';
-        document.body.appendChild(this.glow);
-        
-        // Track mouse movement
-        document.addEventListener('mousemove', throttle((e) => {
-            this.glow.style.left = e.clientX + 'px';
-            this.glow.style.top = e.clientY + 'px';
-            this.glow.style.opacity = '1';
-        }, 16));
-        
-        // Hide on mouse leave
-        document.addEventListener('mouseleave', () => {
-            this.glow.style.opacity = '0';
-        });
-    }
-}
-
-// ============================================
-// PROJECT CARDS HOVER EFFECT
+// PROJECT CARDS MOUSE EFFECT
 // ============================================
 
 class ProjectCards {
     constructor() {
         this.cards = document.querySelectorAll('.project-card');
-        this.init();
+        
+        if (this.cards.length > 0) {
+            this.init();
+        }
     }
     
     init() {
         this.cards.forEach(card => {
-            card.addEventListener('mouseenter', (e) => {
-                this.createGlowEffect(e.currentTarget);
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
             });
         });
-    }
-    
-    createGlowEffect(card) {
-        // Add subtle glow animation
-        card.style.transition = 'all 0.4s ease';
     }
 }
 
 // ============================================
-// PARALLAX ON MOUSE MOVE (Hero Section)
+// HERO PARALLAX ON MOUSE MOVE
 // ============================================
 
 class HeroParallax {
@@ -420,7 +381,7 @@ class HeroParallax {
         this.lanterns = document.querySelectorAll('.lantern');
         this.isMobile = window.innerWidth < 768;
         
-        if (!this.isMobile && this.hero) {
+        if (!this.isMobile && this.hero && this.lanterns.length > 0) {
             this.init();
         }
     }
@@ -430,65 +391,72 @@ class HeroParallax {
             const { clientX, clientY } = e;
             const { innerWidth, innerHeight } = window;
             
-            // Calculate position as percentage
             const xPercent = (clientX / innerWidth - 0.5) * 2;
             const yPercent = (clientY / innerHeight - 0.5) * 2;
             
-            // Apply subtle parallax to lanterns
             this.lanterns.forEach((lantern, index) => {
-                const speed = 0.5 + (index * 0.1);
-                const x = xPercent * 20 * speed;
-                const y = yPercent * 20 * speed;
-                lantern.style.transform = `translate(${x}px, ${y}px)`;
+                const speed = 0.3 + (index * 0.05);
+                const x = xPercent * 15 * speed;
+                const y = yPercent * 15 * speed;
+                
+                const currentTransform = lantern.style.transform || '';
+                const rotateMatch = currentTransform.match(/rotate\([^)]+\)/);
+                const rotate = rotateMatch ? rotateMatch[0] : 'rotate(0deg)';
+                
+                lantern.style.transform = `translate(${x}px, ${y}px) ${rotate}`;
             });
         }, 50));
     }
 }
 
 // ============================================
-// PERFORMANCE OPTIMIZATION
+// CURSOR GLOW EFFECT (Desktop)
 // ============================================
 
-class PerformanceOptimizer {
+class CursorGlow {
     constructor() {
-        this.init();
+        this.isMobile = window.innerWidth < 768;
+        
+        if (!this.isMobile) {
+            this.init();
+        }
     }
     
     init() {
-        // Reduce animations on low-power devices
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            this.disableAnimations();
-        }
+        this.glow = document.createElement('div');
+        this.glow.style.cssText = `
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 179, 71, 0.12), transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        `;
+        document.body.appendChild(this.glow);
         
-        // Pause animations when tab is not visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                this.pauseAnimations();
-            } else {
-                this.resumeAnimations();
-            }
+        document.addEventListener('mousemove', throttle((e) => {
+            this.glow.style.left = e.clientX + 'px';
+            this.glow.style.top = e.clientY + 'px';
+            this.glow.style.opacity = '1';
+        }, 16));
+        
+        document.addEventListener('mouseleave', () => {
+            this.glow.style.opacity = '0';
         });
-    }
-    
-    disableAnimations() {
-        document.body.style.setProperty('--animation-duration', '0.01s');
-    }
-    
-    pauseAnimations() {
-        document.body.style.animationPlayState = 'paused';
-    }
-    
-    resumeAnimations() {
-        document.body.style.animationPlayState = 'running';
     }
 }
 
 // ============================================
-// INITIALIZE ALL MODULES ON DOM LOAD
+// INITIALIZE ALL MODULES
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all modules
+    console.log('🏮 Initializing Lantern City Portfolio...');
+    
     new Navigation();
     new ScrollProgress();
     new Skyline();
@@ -500,23 +468,15 @@ document.addEventListener('DOMContentLoaded', () => {
     new CursorGlow();
     new ProjectCards();
     new HeroParallax();
-    new PerformanceOptimizer();
     
-    console.log('🏮 Lantern City Portfolio initialized');
+    console.log('✅ Lantern City Portfolio loaded successfully!');
 });
 
-// ============================================
-// UTILITY: HANDLE WINDOW RESIZE
-// ============================================
-
-let resizeTimer;
+// Handle window resize
 window.addEventListener('resize', debounce(() => {
-    // Reload certain modules on significant resize
     const newWidth = window.innerWidth;
-    if (Math.abs(newWidth - window.lastWidth) > 100) {
+    if (Math.abs(newWidth - (window.lastWidth || 0)) > 200) {
         window.location.reload();
     }
     window.lastWidth = newWidth;
 }, 500));
-
-window.lastWidth = window.innerWidth;
