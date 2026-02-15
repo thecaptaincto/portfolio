@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - captaincto</title>
-    <link rel="stylesheet" href="css/styles-fixed.css">
-    <link rel="stylesheet" href="css/pages-fixed.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Sky Layer -->
     <div class="sky-layer" id="skyLayer"></div>
+    
+    <!-- Skyline Layer -->
     <div class="skyline-layer" id="skylineLayer">
         <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
             <g class="buildings">
@@ -34,10 +35,11 @@
         </svg>
     </div>
 
+    <!-- Navigation -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">CTO</a>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -52,162 +54,114 @@
         </div>
     </nav>
 
+    <!-- Scroll Progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- Main Content -->
     <main>
+        <!-- Page Hero -->
         <section class="page-hero">
+            <div class="lantern-layer">
+                <div class="lantern lantern-1"></div>
+                <div class="lantern lantern-3"></div>
+                <div class="lantern lantern-5"></div>
+            </div>
+            <div class="particles" id="particles"></div>
             <div class="container">
                 <h1 class="page-title">About Me</h1>
                 <p class="page-subtitle">The story behind the code</p>
             </div>
         </section>
 
-        <section class="about-full section-reveal">
+        <!-- My Story Section -->
+        <section class="section-reveal">
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-main">
-                        <h2 class="content-title">Hey, I'm captaincto</h2>
-                        <div class="section-decoration"></div>
-                        
-                        <div class="content-block">
-                            <p class="content-text">
-                                I'm 19 years old, somewhere between a beginner who's figured out the basics and 
-                                an expert who knows everything. I like to think of myself as an enthusiastic 
-                                intermediate—someone who's comfortable shipping projects but humble enough to admit 
-                                there's a universe of things I haven't learned yet.
-                            </p>
-                            <p class="content-text">
-                                My journey into tech wasn't some dramatic origin story. No childhood prodigy writing 
-                                compilers at age seven. I started coding because I was curious, kept going because 
-                                I enjoyed it, and now I'm here because I genuinely believe in what I'm building.
-                            </p>
-                        </div>
-
-                        <h3 class="subsection-title">Growing Up Between Two Worlds</h3>
-                        <div class="content-block">
-                            <p class="content-text">
-                                I grew up in a city where old traditions sit right next to cutting-edge innovation. 
-                                My childhood was walking down narrow streets lined with red lanterns at night, 
-                                then looking up to see a skyline glowing with neon and glass. That contrast—warm 
-                                heritage meeting cool modernity—shaped how I see the world.
-                            </p>
-                            <p class="content-text">
-                                My family ran a small shop where everything was handmade, carefully crafted, and 
-                                built to last. That taught me patience, attention to detail, and respect for craft. 
-                                Then I'd come home and spend hours on my laptop, building websites and learning to code. 
-                                Same values, different medium.
-                            </p>
-                        </div>
-
-                        <h3 class="subsection-title">What Drives Me</h3>
-                        <div class="content-block">
-                            <p class="content-text">
-                                I believe technology should serve people, not the other way around. Every interface 
-                                I design, every line of code I write, I try to think: "Will this make someone's life 
-                                a little bit better?" It's not always about building the flashiest app or using the 
-                                trendiest framework. Sometimes it's about making something simple, reliable, and genuinely useful.
-                            </p>
-                            <p class="content-text">
-                                I'm also driven by the idea of preserving what matters while embracing what's new. 
-                                Technology moves fast, but culture and human connection shouldn't be left behind. 
-                                I want to build things that feel both timeless and forward-looking—like walking 
-                                down a lantern-lit street toward a glowing skyline.
-                            </p>
-                        </div>
-
-                        <h3 class="subsection-title">Where I Am Now</h3>
-                        <div class="content-block">
-                            <p class="content-text">
-                                Right now, I'm focused on improving my craft every single day. I'm working on projects 
-                                that challenge me, learning from people who are smarter than me, and trying to ship 
-                                things that matter. I'm not the best coder out there, but I'm hardworking, curious, 
-                                and I show up consistently.
-                            </p>
-                            <p class="content-text">
-                                I specialize in frontend development with a strong focus on design and user experience. 
-                                I love working with JavaScript, React, and modern web technologies. But I'm also 
-                                learning backend, diving deeper into databases, and exploring how to build full-stack 
-                                applications that are both beautiful and robust.
-                            </p>
-                        </div>
-
-                        <h3 class="subsection-title">Beyond the Screen</h3>
-                        <div class="content-block">
-                            <p class="content-text">
-                                When I'm not coding, you'll probably find me wandering the city at night, camera in hand, 
-                                trying to capture that perfect moment when the old world meets the new. I'm also into 
-                                design, photography, and anything that lets me blend creativity with technology.
-                            </p>
-                            <p class="content-text">
-                                I read a lot—everything from technical documentation to philosophy to fiction. I believe 
-                                the best developers are well-rounded people who draw inspiration from everywhere, not 
-                                just other code.
-                            </p>
-                        </div>
-
-                        <div class="cta-block">
-                            <h3 class="subsection-title">Let's Connect</h3>
-                            <p class="content-text">
-                                I'm always excited to meet fellow creators, learners, and dreamers. Whether you want 
-                                to collaborate on a project, talk about tech and culture, or just say hello, I'd love 
-                                to hear from you.
-                            </p>
-                            <a href="contact.html" class="cta-button">
-                                <span>Get In Touch</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <aside class="about-sidebar">
-                        <div class="sidebar-card">
-                            <h4 class="sidebar-title">Quick Facts</h4>
-                            <ul class="facts-list">
-                                <li><strong>Age:</strong> 19</li>
-                                <li><strong>Location:</strong> East Asia</li>
-                                <li><strong>Focus:</strong> Frontend Development</li>
-                                <li><strong>Experience:</strong> Intermediate</li>
-                                <li><strong>Status:</strong> Available for projects</li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-card">
-                            <h4 class="sidebar-title">Currently Learning</h4>
-                            <ul class="learning-list">
-                                <li>Advanced React patterns</li>
-                                <li>Backend development with Node.js</li>
-                                <li>Database design & optimization</li>
-                                <li>Web animations & interactions</li>
-                                <li>TypeScript</li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-card">
-                            <h4 class="sidebar-title">Interests</h4>
-                            <ul class="interests-list">
-                                <li>🎨 UI/UX Design</li>
-                                <li>📸 Night Photography</li>
-                                <li>🏮 Cultural Heritage</li>
-                                <li>🌃 Urban Exploration</li>
-                                <li>📚 Philosophy & Literature</li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-card">
-                            <h4 class="sidebar-title">Core Values</h4>
-                            <ul class="values-list">
-                                <li>Craft over convenience</li>
-                                <li>Quality over quantity</li>
-                                <li>Learning over knowing</li>
-                                <li>Substance over style</li>
-                                <li>People over pixels</li>
-                            </ul>
-                        </div>
-                    </aside>
+                <div class="content-section">
+                    <h2 class="section-title">My Story</h2>
+                    <div class="section-decoration"></div>
+                    
+                    <p class="content-text">
+                        I'm <strong>captaincto</strong>, a 19-year-old developer who grew up in a city where ancient lantern-lit 
+                        alleys meet towering neon skyscrapers. This contrast—tradition and innovation, warmth and electricity—has 
+                        shaped everything about how I see technology and creativity.
+                    </p>
+                    
+                    <p class="content-text">
+                        My journey into coding started when I was 14, tinkering with HTML and CSS to build fan sites for my favorite 
+                        games and anime. I didn't have a fancy computer or expensive courses. Just a second-hand laptop, free tutorials, 
+                        and an unhealthy amount of curiosity. I spent countless nights debugging, googling error messages, and slowly 
+                        watching things come to life on my screen.
+                    </p>
+                    
+                    <p class="content-text">
+                        Five years later, I'm still learning—still debugging, still googling, still figuring things out. But now I can 
+                        build real projects. Apps that people use. Websites that look professional. Code that (usually) works on the 
+                        first try. I've gone from "What's a div?" to shipping full-stack applications, and it feels like magic every 
+                        single time.
+                    </p>
                 </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">What I Value</h2>
+                    <div class="section-decoration"></div>
+                    
+                    <p class="content-text">
+                        <strong>Craft over speed.</strong> I'd rather spend an extra hour making something beautiful and thoughtful 
+                        than rush out something functional but soulless. Every project is a chance to create an experience, not just 
+                        a product.
+                    </p>
+                    
+                    <p class="content-text">
+                        <strong>Learning over knowing.</strong> I'm not afraid to say "I don't know" or "Let me figure that out." 
+                        Being intermediate means I'm past the basics but far from mastery—and that's exciting. There's so much room 
+                        to grow.
+                    </p>
+                    
+                    <p class="content-text">
+                        <strong>Culture and code.</strong> Technology doesn't exist in a vacuum. The apps we build, the interfaces we 
+                        design, the stories we tell through our work—they all carry culture, history, and meaning. I want my projects 
+                        to honor where I come from while pushing toward what's possible.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Beyond Code</h2>
+                    <div class="section-decoration"></div>
+                    
+                    <p class="content-text">
+                        When I'm not coding, you'll find me exploring the city at night (there's something about neon signs and empty 
+                        streets), sketching UI concepts in my notebook, or reading about design systems and creative technology. I'm 
+                        also learning Japanese, both because I love the language and because so much of the design inspiration I admire 
+                        comes from Japanese culture.
+                    </p>
+                    
+                    <p class="content-text">
+                        I believe in building in public, sharing what I learn, and helping others who are where I was a few years ago. 
+                        That's why I write tutorials, open-source my projects, and try to make the development community a little more 
+                        welcoming for beginners.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="contact-teaser section-reveal">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-text">
+                    Whether you want to collaborate on a project, chat about code, or just say hello—I'd love to hear from you.
+                </p>
+                <a href="contact.html" class="cta-button">
+                    <span>Get In Touch</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
@@ -218,6 +172,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/about.js"></script>
 </body>
 </html>

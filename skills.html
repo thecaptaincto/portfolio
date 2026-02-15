@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - captaincto</title>
-    <link rel="stylesheet" href="css/styles-fixed.css">
-    <link rel="stylesheet" href="css/pages-fixed.css">
-    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sky-layer" id="skyLayer"></div>
-    <div class="skyline-layer" id="skylineLayer">
+    <div class="sky-layer"></div>
+    <div class="skyline-layer">
         <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
             <g class="buildings">
                 <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
@@ -37,7 +35,7 @@
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">CTO</a>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -56,240 +54,280 @@
 
     <main>
         <section class="page-hero">
+            <div class="lantern-layer">
+                <div class="lantern lantern-1"></div>
+                <div class="lantern lantern-3"></div>
+                <div class="lantern lantern-5"></div>
+            </div>
+            <div class="particles" id="particles"></div>
             <div class="container">
-                <h1 class="page-title">Skills & Tools</h1>
-                <p class="page-subtitle">Building with purpose, learning with passion</p>
+                <h1 class="page-title">Skills & Expertise</h1>
+                <p class="page-subtitle">Tools I use to bring ideas to life</p>
             </div>
         </section>
 
-        <section class="skills-detailed section-reveal">
+        <section class="section-reveal">
             <div class="container">
-                <div class="skills-intro">
-                    <p class="intro-text">
-                        I'm an intermediate developer with a strong foundation in frontend technologies and a growing 
-                        backend skillset. I'm constantly learning, experimenting, and pushing myself to build better 
-                        things every day.
+                <div class="content-section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="section-decoration"></div>
+                    
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h3 class="category-title">Frontend Development</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">HTML5 & CSS3</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript (ES6+)</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Vue.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="65"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Tailwind CSS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">Backend & APIs</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">Node.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="65"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Express.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="60"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">RESTful APIs</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">MongoDB</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="60"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Firebase</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="65"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">Tools & Workflow</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">Git & GitHub</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">VS Code</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Figma</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">npm/yarn</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Webpack/Vite</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="60"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">Design & UX</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">UI/UX Design</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Responsive Design</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Animation (CSS/JS)</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">SVG & Canvas</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="65"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Accessibility (a11y)</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="60"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">Currently Learning</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">TypeScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="50"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Next.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="55"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">GraphQL</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="40"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Docker</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="35"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Three.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="45"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">Soft Skills</h3>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <span class="skill-name">Problem Solving</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Self-Learning</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Communication</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Time Management</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Attention to Detail</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" data-skill="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">My Approach</h2>
+                    <div class="section-decoration"></div>
+                    
+                    <p class="content-text">
+                        I believe in <strong>learning by building</strong>. Every project is an opportunity to try something new, 
+                        break something, fix it, and come out stronger. I'm not afraid of documentation, Stack Overflow, or asking 
+                        for help—being a good developer means knowing when to reach out and learn from others.
+                    </p>
+                    
+                    <p class="content-text">
+                        My coding philosophy is simple: <strong>write code that future-you won't hate</strong>. Clean, readable, 
+                        well-commented code isn't just professional—it's respectful to everyone who might work with it, including 
+                        yourself six months from now.
+                    </p>
+                    
+                    <p class="content-text">
+                        I'm at the intermediate level, which means I have enough knowledge to be dangerous but enough wisdom to know 
+                        there's always more to learn. I'm comfortable with the fundamentals, excited about advanced concepts, and 
+                        always hungry to level up.
                     </p>
                 </div>
+            </div>
+        </section>
 
-                <div class="skills-section">
-                    <h2 class="skills-category-title">Frontend Development</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-icon">💻</div>
-                            <h3 class="skill-card-title">HTML & CSS</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Semantic HTML5, CSS3 with animations, Flexbox, Grid, responsive design, 
-                                accessibility best practices, and modern layout techniques.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">⚡</div>
-                            <h3 class="skill-card-title">JavaScript</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate-Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                ES6+, async/await, promises, DOM manipulation, event handling, modules, 
-                                and modern JavaScript patterns.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">⚛️</div>
-                            <h3 class="skill-card-title">React</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Hooks, component architecture, state management (Redux, Context API), 
-                                React Router, and performance optimization.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">🎨</div>
-                            <h3 class="skill-card-title">UI/UX Design</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate-Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                User-centered design, wireframing, prototyping, visual design principles, 
-                                color theory, and creating accessible interfaces.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h2 class="skills-category-title">Backend & Tools</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-icon">🟢</div>
-                            <h3 class="skill-card-title">Node.js</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Express.js, RESTful APIs, middleware, authentication, and server-side 
-                                JavaScript fundamentals.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">🗄️</div>
-                            <h3 class="skill-card-title">Databases</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Beginner-Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                MongoDB, Firebase, basic SQL, database design, and working with ORMs 
-                                like Mongoose.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">🔧</div>
-                            <h3 class="skill-card-title">Git & GitHub</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Version control, branching, merging, pull requests, collaborative workflows, 
-                                and GitHub Actions basics.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">📦</div>
-                            <h3 class="skill-card-title">Build Tools</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Webpack, Vite, npm/yarn, module bundlers, and modern development workflows.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h2 class="skills-category-title">Additional Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-icon">🎭</div>
-                            <h3 class="skill-card-title">Animations</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate-Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                CSS animations, Web Animations API, GSAP basics, scroll-triggered effects, 
-                                and micro-interactions.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">🎯</div>
-                            <h3 class="skill-card-title">SVG & Graphics</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                SVG manipulation, Canvas API, creating custom graphics, and data visualization.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">📱</div>
-                            <h3 class="skill-card-title">Responsive Design</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Advanced</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Mobile-first approach, media queries, fluid layouts, touch interactions, 
-                                and cross-device testing.
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <div class="skill-icon">🔐</div>
-                            <h3 class="skill-card-title">Web Security</h3>
-                            <div class="skill-level">
-                                <span class="level-text">Beginner-Intermediate</span>
-                                <div class="level-bar">
-                                    <div class="level-fill" style="width: 55%"></div>
-                                </div>
-                            </div>
-                            <p class="skill-description">
-                                Authentication, JWT, CORS, basic encryption, secure coding practices, 
-                                and OWASP fundamentals.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="learning-section">
-                    <h2 class="section-title">Currently Learning</h2>
-                    <div class="learning-grid">
-                        <div class="learning-item">
-                            <div class="learning-icon">📚</div>
-                            <h3 class="learning-title">TypeScript</h3>
-                            <p class="learning-desc">Adding type safety to my JavaScript projects</p>
-                        </div>
-                        <div class="learning-item">
-                            <div class="learning-icon">🌐</div>
-                            <h3 class="learning-title">GraphQL</h3>
-                            <p class="learning-desc">Modern API development and data fetching</p>
-                        </div>
-                        <div class="learning-item">
-                            <div class="learning-icon">🐳</div>
-                            <h3 class="learning-title">Docker</h3>
-                            <p class="learning-desc">Containerization and deployment workflows</p>
-                        </div>
-                        <div class="learning-item">
-                            <div class="learning-icon">🧪</div>
-                            <h3 class="learning-title">Testing</h3>
-                            <p class="learning-desc">Jest, React Testing Library, E2E testing</p>
-                        </div>
-                    </div>
-                </div>
+        <section class="contact-teaser section-reveal">
+            <div class="container">
+                <h2 class="section-title">Let's Build Together</h2>
+                <p class="contact-text">
+                    Looking for someone passionate, reliable, and always eager to learn? Let's chat about your next project.
+                </p>
+                <a href="contact.html" class="cta-button">
+                    <span>Get In Touch</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </section>
     </main>
@@ -304,6 +342,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/skills.js"></script>
 </body>
 </html>
