@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captaincto – Lantern City Portfolio</title>
+    <link rel="stylesheet" href="css/styles-fixed.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sky Layer (Animated Background) -->
+    <div class="sky-layer" id="skyLayer"></div>
+    
+    <!-- Skyline Layer -->
+    <div class="skyline-layer" id="skylineLayer">
+        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
+            <!-- Building silhouettes with neon edges -->
+            <g class="buildings">
+                <!-- Far left cluster -->
+                <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
+                <rect x="180" y="300" width="90" height="300" class="building" data-speed="0.25"/>
+                <rect x="280" y="380" width="110" height="220" class="building" data-speed="0.35"/>
+                
+                <!-- Left center cluster -->
+                <rect x="420" y="280" width="140" height="320" class="building building-tall" data-speed="0.4"/>
+                <rect x="570" y="320" width="100" height="280" class="building" data-speed="0.3"/>
+                <rect x="680" y="250" width="160" height="350" class="building building-tall" data-speed="0.45"/>
+                
+                <!-- Center cluster (tallest) -->
+                <rect x="870" y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
+                <rect x="1060" y="220" width="140" height="380" class="building building-tall" data-speed="0.48"/>
+                <rect x="1210" y="260" width="120" height="340" class="building" data-speed="0.42"/>
+                
+                <!-- Right center cluster -->
+                <rect x="1360" y="310" width="150" height="290" class="building" data-speed="0.38"/>
+                <rect x="1520" y="200" width="170" height="400" class="building building-tall" data-speed="0.47"/>
+                
+                <!-- Far right cluster -->
+                <rect x="1700" y="340" width="100" height="260" class="building" data-speed="0.32"/>
+                <rect x="1810" y="370" width="90" height="230" class="building" data-speed="0.28"/>
+            </g>
+            
+            <!-- Window lights (animated) -->
+            <g class="window-lights">
+                <!-- These will be dynamically generated and animated via JS -->
+            </g>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">CTO</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <!-- Lantern Foreground Layer -->
+            <div class="lantern-layer">
+                <div class="lantern lantern-1" data-float="2"></div>
+                <div class="lantern lantern-2" data-float="3"></div>
+                <div class="lantern lantern-3" data-float="2.5"></div>
+                <div class="lantern lantern-4" data-float="3.5"></div>
+                <div class="lantern lantern-5" data-float="2.8"></div>
+            </div>
+            
+            <!-- Floating particles -->
+            <div class="particles" id="particles"></div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">captain</span><span class="title-line">cto</span>
+                </h1>
+                <p class="hero-tagline">Walking the lantern-lit path toward tomorrow's skyline</p>
+                <a href="#about-snapshot" class="cta-button">
+                    <span>Explore My Journey</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4L10 16M10 16L16 10M10 16L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Snapshot Section -->
+        <section class="about-snapshot section-reveal" id="about-snapshot">
+            <div class="container">
+                <div class="section-decoration"></div>
+                <h2 class="section-title">A Glimpse Inside</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        Hey there! I'm <strong>captaincto</strong>, a 19-year-old developer from the heart of the city lights. 
+                        I'm not a master coder yet—more like an enthusiastic learner with a laptop and a lot of late nights. 
+                        But I'm hardworking, curious, and I genuinely love what I do.
+                    </p>
+                    <p class="about-text">
+                        I grew up surrounded by the warm glow of tradition and the bright buzz of modern technology. 
+                        That duality—heritage and innovation—shapes how I see the world and how I build things. 
+                        Every project I touch is a chance to blend old-world craft with new-world possibility.
+                    </p>
+                    <p class="about-text">
+                        Right now, I'm at the intermediate level—comfortable enough to ship projects, humble enough to know 
+                        there's galaxies more to learn. I believe in showing up, putting in the work, and creating things 
+                        that matter. One line of code at a time.
+                    </p>
+                    <a href="about.html" class="text-link">Read my full story →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="featured-projects section-reveal" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Works</h2>
+                <p class="section-subtitle">Projects that light up the night</p>
+                
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-number">01</div>
+                        <h3 class="project-title">NeonChat</h3>
+                        <p class="project-description">
+                            A real-time messaging app with end-to-end encryption, built for communities who value 
+                            privacy without sacrificing aesthetics. Features custom themes and lantern-inspired UI.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="projects.html#neonchat" class="project-link">View Project →</a>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-number">02</div>
+                        <h3 class="project-title">SkylineWeather</h3>
+                        <p class="project-description">
+                            A poetic weather dashboard that transforms forecasts into visual stories. Watch the 
+                            cityscape change with the weather—rain, fog, sun, and night, all rendered beautifully.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">CSS Animations</span>
+                            <span class="tech-tag">SVG</span>
+                        </div>
+                        <a href="projects.html#skylineweather" class="project-link">View Project →</a>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-number">03</div>
+                        <h3 class="project-title">Heritage Archive</h3>
+                        <p class="project-description">
+                            A digital preservation platform for cultural stories and historical photographs. Built 
+                            to honor the past while making it accessible to future generations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Image Processing</span>
+                            <span class="tech-tag">PWA</span>
+                        </div>
+                        <a href="projects.html#heritage" class="project-link">View Project →</a>
+                    </article>
+
+                    <!-- Project Card 4 -->
+                    <article class="project-card">
+                        <div class="project-number">04</div>
+                        <h3 class="project-title">LanternTimer</h3>
+                        <p class="project-description">
+                            A minimalist productivity timer with an ambient lantern glow that dims as you focus. 
+                            Combines Pomodoro technique with calming visual design for deep work sessions.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">Web Animations API</span>
+                            <span class="tech-tag">Local Storage</span>
+                        </div>
+                        <a href="projects.html#lanterntimer" class="project-link">View Project →</a>
+                    </article>
+
+                    <!-- Project Card 5 -->
+                    <article class="project-card">
+                        <div class="project-number">05</div>
+                        <h3 class="project-title">CodeNight Blog</h3>
+                        <p class="project-description">
+                            My personal dev blog where I document what I'm learning, share tutorials, and write 
+                            about the intersection of culture and code. Built with custom CMS.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">MDX</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <a href="projects.html#blog" class="project-link">View Project →</a>
+                    </article>
+                </div>
+
+                <div class="section-cta">
+                    <a href="projects.html" class="cta-button secondary">
+                        <span>View All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Preview Section -->
+        <section class="skills-preview section-reveal" id="skills-preview">
+            <div class="container">
+                <h2 class="section-title">Toolkit & Capabilities</h2>
+                <p class="section-subtitle">Always learning, always building</p>
+                
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h3 class="category-title">Frontend Development</h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML/CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Backend & Tools</h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="65"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Git/GitHub</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">APIs & Databases</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Design & Creative</h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">UI/UX Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Animation</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SVG & Graphics</span>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" data-skill="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <a href="skills.html" class="text-link">Explore full skill set →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy section-reveal" id="philosophy">
+            <div class="container">
+                <div class="philosophy-content">
+                    <blockquote class="philosophy-quote">
+                        <p>
+                            "Technology isn't just about making things faster or more efficient. 
+                            It's about telling stories, preserving memories, and building bridges between 
+                            who we were and who we're becoming."
+                        </p>
+                    </blockquote>
+                    <div class="philosophy-text">
+                        <p>
+                            I believe every line of code carries intention. Every interface holds the possibility 
+                            of human connection. My work sits at the intersection of cultural heritage and 
+                            digital innovation—honoring tradition while embracing the future.
+                        </p>
+                        <p>
+                            The lantern-lit streets of my childhood taught me patience, craft, and attention to detail. 
+                            The glowing skyline taught me ambition, possibility, and the courage to dream big. 
+                            I carry both with me in everything I create.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Teaser Section -->
+        <section class="contact-teaser section-reveal" id="contact-teaser">
+            <div class="container">
+                <h2 class="section-title">Let's Build Something Together</h2>
+                <p class="contact-text">
+                    Have an idea? Want to collaborate? Or just want to say hello? 
+                    I'm always excited to connect with fellow creators and dreamers.
+                </p>
+                <a href="contact.html" class="cta-button glow">
+                    <span>Get In Touch</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">CTO Productions</p>
+                <p class="footer-subtext">© 2024 captaincto. Crafted with care under the lantern light.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
 
