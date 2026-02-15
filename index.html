@@ -3,58 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>captaincto's Portfolio</title>
-    <link rel="stylesheet" href="css/styles-fixed.css">
-    <link rel="stylesheet" href="css/home.css">
+    <title>captaincto – Lantern City Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sky Layer (Animated Background) -->
+    <!-- Sky Layer (Gradient Background) -->
     <div class="sky-layer" id="skyLayer"></div>
     
     <!-- Skyline Layer -->
     <div class="skyline-layer" id="skylineLayer">
         <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
-            <!-- Building silhouettes with neon edges -->
             <g class="buildings">
-                <!-- Far left cluster -->
                 <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
                 <rect x="180" y="300" width="90" height="300" class="building" data-speed="0.25"/>
                 <rect x="280" y="380" width="110" height="220" class="building" data-speed="0.35"/>
-                
-                <!-- Left center cluster -->
                 <rect x="420" y="280" width="140" height="320" class="building building-tall" data-speed="0.4"/>
                 <rect x="570" y="320" width="100" height="280" class="building" data-speed="0.3"/>
                 <rect x="680" y="250" width="160" height="350" class="building building-tall" data-speed="0.45"/>
-                
-                <!-- Center cluster (tallest) -->
                 <rect x="870" y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
                 <rect x="1060" y="220" width="140" height="380" class="building building-tall" data-speed="0.48"/>
                 <rect x="1210" y="260" width="120" height="340" class="building" data-speed="0.42"/>
-                
-                <!-- Right center cluster -->
                 <rect x="1360" y="310" width="150" height="290" class="building" data-speed="0.38"/>
                 <rect x="1520" y="200" width="170" height="400" class="building building-tall" data-speed="0.47"/>
-                
-                <!-- Far right cluster -->
                 <rect x="1700" y="340" width="100" height="260" class="building" data-speed="0.32"/>
                 <rect x="1810" y="370" width="90" height="230" class="building" data-speed="0.28"/>
             </g>
-            
-            <!-- Window lights (animated) -->
-            <g class="window-lights">
-                <!-- These will be dynamically generated and animated via JS -->
-            </g>
+            <g class="window-lights"></g>
         </svg>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation - Always Visible -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">CTO</a>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -155,7 +140,7 @@
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">WebSocket</span>
                             <span class="tech-tag">MongoDB</span>
                         </div>
                         <a href="projects.html#neonchat" class="project-link">View Project →</a>
@@ -166,63 +151,30 @@
                         <div class="project-number">02</div>
                         <h3 class="project-title">SkylineWeather</h3>
                         <p class="project-description">
-                            A poetic weather dashboard that transforms forecasts into visual stories. Watch the 
-                            cityscape change with the weather—rain, fog, sun, and night, all rendered beautifully.
+                            A beautiful weather visualization app that brings the cityscape to life. Real-time weather data 
+                            transforms the skyline—rain falls, sun shines, and clouds drift by in perfect sync.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Canvas API</span>
+                            <span class="tech-tag">OpenWeather</span>
                             <span class="tech-tag">CSS Animations</span>
-                            <span class="tech-tag">SVG</span>
                         </div>
-                        <a href="projects.html#skylineweather" class="project-link">View Project →</a>
+                        <a href="projects.html#weather" class="project-link">View Project →</a>
                     </article>
 
                     <!-- Project Card 3 -->
                     <article class="project-card">
                         <div class="project-number">03</div>
-                        <h3 class="project-title">Heritage Archive</h3>
-                        <p class="project-description">
-                            A digital preservation platform for cultural stories and historical photographs. Built 
-                            to honor the past while making it accessible to future generations.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Image Processing</span>
-                            <span class="tech-tag">PWA</span>
-                        </div>
-                        <a href="projects.html#heritage" class="project-link">View Project →</a>
-                    </article>
-
-                    <!-- Project Card 4 -->
-                    <article class="project-card">
-                        <div class="project-number">04</div>
-                        <h3 class="project-title">LanternTimer</h3>
-                        <p class="project-description">
-                            A minimalist productivity timer with an ambient lantern glow that dims as you focus. 
-                            Combines Pomodoro technique with calming visual design for deep work sessions.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">Web Animations API</span>
-                            <span class="tech-tag">Local Storage</span>
-                        </div>
-                        <a href="projects.html#lanterntimer" class="project-link">View Project →</a>
-                    </article>
-
-                    <!-- Project Card 5 -->
-                    <article class="project-card">
-                        <div class="project-number">05</div>
                         <h3 class="project-title">CodeNight Blog</h3>
                         <p class="project-description">
-                            My personal dev blog where I document what I'm learning, share tutorials, and write 
-                            about the intersection of culture and code. Built with custom CMS.
+                            My personal development blog where I share what I'm learning, write tutorials, and 
+                            explore the intersection of culture and code. Built with a custom CMS and beautiful typography.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Next.js</span>
                             <span class="tech-tag">MDX</span>
-                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Tailwind</span>
                             <span class="tech-tag">Vercel</span>
                         </div>
                         <a href="projects.html#blog" class="project-link">View Project →</a>
@@ -373,12 +325,11 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-text">CTO Productions</p>
-                <p class="footer-subtext">© 2026 captaincto. Crafted with care under the lantern light.</p>
+                <p class="footer-subtext">© 2024 captaincto. Crafted with care under the lantern light.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/home.js"></script>
 </body>
 </html>
