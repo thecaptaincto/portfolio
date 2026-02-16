@@ -104,6 +104,7 @@ class Skyline {
     constructor() {
         this.buildings = document.querySelectorAll('.building');
         this.windowLightsContainer = document.querySelector('.window-lights');
+        this.isMobile = window.innerWidth < 768;
         
         if (this.buildings.length > 0 && this.windowLightsContainer) {
             this.init();
@@ -113,9 +114,12 @@ class Skyline {
     init() {
         this.generateWindowLights();
         
-        window.addEventListener('scroll', throttle(() => {
-            this.parallaxEffect();
-        }, 50));
+        // Disable parallax on mobile for better performance
+        if (!this.isMobile) {
+            window.addEventListener('scroll', throttle(() => {
+                this.parallaxEffect();
+            }, 50));
+        }
     }
     
     generateWindowLights() {
@@ -154,7 +158,8 @@ class Skyline {
         this.buildings.forEach(building => {
             const speed = parseFloat(building.getAttribute('data-speed')) || 0.3;
             const yOffset = -(scrolled * speed);
-            building.style.transform = `translateY(${yOffset}px)`;
+            // Use translate3d for hardware acceleration
+            building.style.transform = `translate3d(0, ${yOffset}px, 0)`;
         });
     }
 }
@@ -166,7 +171,9 @@ class Skyline {
 class ParticleSystem {
     constructor() {
         this.container = document.getElementById('particles');
-        this.particleCount = 30;
+        // Reduce particles on mobile for better performance
+        this.isMobile = window.innerWidth < 768;
+        this.particleCount = this.isMobile ? 10 : 30;
         
         if (this.container) {
             this.init();
