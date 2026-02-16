@@ -104,7 +104,6 @@ class Skyline {
     constructor() {
         this.buildings = document.querySelectorAll('.building');
         this.windowLightsContainer = document.querySelector('.window-lights');
-        this.isMobile = window.innerWidth < 768;
         
         if (this.buildings.length > 0 && this.windowLightsContainer) {
             this.init();
@@ -114,12 +113,9 @@ class Skyline {
     init() {
         this.generateWindowLights();
         
-        // Disable parallax on mobile for better performance
-        if (!this.isMobile) {
-            window.addEventListener('scroll', throttle(() => {
-                this.parallaxEffect();
-            }, 50));
-        }
+        window.addEventListener('scroll', throttle(() => {
+            this.parallaxEffect();
+        }, 50));
     }
     
     generateWindowLights() {
@@ -158,8 +154,7 @@ class Skyline {
         this.buildings.forEach(building => {
             const speed = parseFloat(building.getAttribute('data-speed')) || 0.3;
             const yOffset = -(scrolled * speed);
-            // Use translate3d for hardware acceleration
-            building.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+            building.style.transform = `translateY(${yOffset}px)`;
         });
     }
 }
@@ -172,8 +167,7 @@ class ParticleSystem {
     constructor() {
         this.container = document.getElementById('particles');
         // Reduce particles on mobile for better performance
-        this.isMobile = window.innerWidth < 768;
-        this.particleCount = this.isMobile ? 10 : 30;
+        this.particleCount = window.innerWidth < 768 ? 15 : 30;
         
         if (this.container) {
             this.init();
@@ -479,11 +473,23 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ Lantern City Portfolio loaded successfully!');
 });
 
-// Handle window resize
-window.addEventListener('resize', debounce(() => {
-    const newWidth = window.innerWidth;
-    if (Math.abs(newWidth - (window.lastWidth || 0)) > 200) {
-        window.location.reload();
-    }
-    window.lastWidth = newWidth;
-}, 500));
+// Handle window resize - only reload on significant width changes (not mobile scrolling)
+let lastWidth = window.innerWidth;
+let resizeTimer;
+
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    
+    resizeTimer = setTimeout(() => {
+        const newWidth = window.innerWidth;
+        const widthDiff = Math.abs(newWidth - lastWidth);
+        
+        // Only reload if width changed significantly (desktop resize or rotation)
+        // AND height-to-width ratio changed (indicates rotation, not just scroll)
+        if (widthDiff > 300) {
+            console.log('Significant resize detected, reloading...');
+            lastWidth = newWidth;
+            window.location.reload();
+        }
+    }, 1000); // Longer delay to avoid mobile scroll triggers
+});
