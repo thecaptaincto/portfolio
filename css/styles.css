@@ -40,8 +40,10 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    /* Improve mobile scroll performance */
+    /* Prevent mobile rubber-band scrolling issues */
     -webkit-overflow-scrolling: touch;
+    /* Prevent zoom on double-tap */
+    touch-action: manipulation;
 }
 
 body {
@@ -50,7 +52,9 @@ body {
     background: var(--night-deep);
     line-height: 1.7;
     overflow-x: hidden;
-    /* Prevent scroll jank on mobile */
+    /* Prevent mobile scroll bounce */
+    overscroll-behavior-y: none;
+    /* Better mobile rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -73,9 +77,9 @@ body {
         var(--night-light) 70%,
         #252548 100%
     );
-    /* Hardware acceleration for smooth scrolling */
-    transform: translateZ(0);
+    /* Hardware acceleration */
     will-change: transform;
+    transform: translateZ(0);
 }
 
 /* ================================================
@@ -91,8 +95,8 @@ body {
     z-index: -2;
     overflow: hidden;
     /* Hardware acceleration */
-    transform: translateZ(0);
     will-change: transform;
+    transform: translateZ(0);
 }
 
 .skyline-svg {
@@ -105,8 +109,6 @@ body {
     stroke: var(--cool-neon);
     stroke-width: 1.5;
     transition: stroke 0.3s ease;
-    /* Hardware acceleration for smooth parallax */
-    will-change: transform;
 }
 
 .building-tall {
@@ -142,6 +144,11 @@ body {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 179, 71, 0.2);
     transition: all 0.3s ease;
+    /* Hardware acceleration for smooth scrolling on mobile */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .main-nav.scrolled {
@@ -900,17 +907,6 @@ section {
    ================================================ */
 
 @media (max-width: 768px) {
-    /* Disable smooth scroll on mobile to prevent jank */
-    html {
-        scroll-behavior: auto;
-    }
-
-    /* Reduce animation complexity on mobile */
-    * {
-        animation-duration: 0.3s !important;
-        transition-duration: 0.3s !important;
-    }
-
     .nav-toggle {
         display: flex;
     }
@@ -969,19 +965,5 @@ section {
     .lantern {
         width: 40px;
         height: 60px;
-        /* Reduce animation complexity on small screens */
-        animation: lantern-float 8s ease-in-out infinite;
-    }
-
-    /* Simplify animations on very small screens */
-    .particle {
-        display: none;
-    }
-
-    /* Reduce backdrop blur for better performance */
-    .content-section,
-    .project-card,
-    .skill-category {
-        backdrop-filter: blur(5px);
     }
 }
