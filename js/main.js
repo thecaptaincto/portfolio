@@ -195,7 +195,8 @@ class Skyline {
 class ParticleSystem {
     constructor() {
         this.container = document.getElementById('particles');
-        this.particleCount = prefersReducedMotion() ? 0 : (window.innerWidth < 768 ? 12 : 24);
+        this.reducedMotion = prefersReducedMotion();
+        this.particleCount = this.reducedMotion ? (window.innerWidth < 768 ? 10 : 16) : (window.innerWidth < 768 ? 12 : 24);
         if (this.container && this.particleCount > 0) this.init();
     }
 
@@ -205,14 +206,20 @@ class ParticleSystem {
             const particle = document.createElement('div');
             const isOrb = Math.random() > 0.82;
             particle.className = isOrb ? 'particle orb' : 'particle';
+            if (this.reducedMotion) particle.classList.add('static');
             particle.style.left = `${Math.random() * 100}%`;
             const size = isOrb ? (8 + Math.random() * 16) : (1.5 + Math.random() * 3.5);
             const duration = isOrb ? (28 + Math.random() * 22) : (16 + Math.random() * 16);
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
-            particle.style.animationDelay = `${Math.random() * 20}s`;
-            particle.style.animationDuration = `${duration}s`;
-            particle.style.setProperty('--duration', `${duration}s`);
+            if (this.reducedMotion) {
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.opacity = isOrb ? '0.18' : '0.32';
+            } else {
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.setProperty('--duration', `${duration}s`);
+            }
             particle.style.setProperty('--particle-alpha', `${isOrb ? (0.14 + Math.random() * 0.16) : (0.28 + Math.random() * 0.42)}`);
             particle.style.setProperty('--drift', `${-70 + Math.random() * 140}px`);
             fragment.appendChild(particle);
