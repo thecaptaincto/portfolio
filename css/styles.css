@@ -33,6 +33,21 @@
     --font-ui: 'Inter', sans-serif;
 }
 
+html[data-theme='day'] {
+    --night-deep: #edf6ff;
+    --night-mid: #dff0ff;
+    --night-light: #cfe8ff;
+    --night-card: #f8fcff;
+    --warm-lantern: #006dc2;
+    --warm-gold: #1c92ea;
+    --cool-neon: #099dd8;
+    --cool-purple: #4f78cf;
+    --text-main: #0f2238;
+    --text-dim: #45607d;
+    --text-warm: #1f4f80;
+    --text-body: #223b58;
+}
+
 /* ================================================
    GLOBAL RESET & BASE STYLES
    ================================================ */
@@ -62,6 +77,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    transition: background var(--transition-base), color var(--transition-base);
 }
 
 body.menu-open {
@@ -112,7 +128,7 @@ button:focus-visible {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -3;
+    z-index: 0;
     background: linear-gradient(
         to bottom,
         var(--night-deep) 0%,
@@ -123,6 +139,7 @@ button:focus-visible {
     /* Hardware acceleration */
     will-change: transform;
     transform: translateZ(0);
+    pointer-events: none;
 }
 
 .sky-layer::before {
@@ -176,11 +193,12 @@ button:focus-visible {
     left: 0;
     width: 100%;
     height: 70vh;
-    z-index: -2;
+    z-index: 1;
     overflow: hidden;
     /* Hardware acceleration */
     will-change: transform;
     transform: translateZ(0);
+    pointer-events: none;
 }
 
 .skyline-layer::before {
@@ -274,8 +292,39 @@ button:focus-visible {
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 16px;
+}
+
+.theme-toggle {
+    border: 1px solid rgba(77, 199, 255, 0.35);
+    background: rgba(77, 199, 255, 0.1);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    background: rgba(77, 199, 255, 0.18);
+    border-color: rgba(77, 199, 255, 0.55);
+    transform: translateY(-1px);
+}
+
+.theme-toggle-label {
+    pointer-events: none;
 }
 
 .nav-logo {
@@ -295,6 +344,7 @@ button:focus-visible {
     display: flex;
     list-style: none;
     gap: 32px;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -1245,6 +1295,77 @@ section[id] {
     color: var(--text-dim);
 }
 
+html[data-theme='day'] .main-nav {
+    background: rgba(240, 248, 255, 0.9);
+    border-bottom-color: rgba(0, 109, 194, 0.18);
+}
+
+html[data-theme='day'] .main-nav.scrolled {
+    background: rgba(240, 248, 255, 0.96);
+}
+
+html[data-theme='day'] .hero-content,
+html[data-theme='day'] .content-section,
+html[data-theme='day'] .project-card,
+html[data-theme='day'] .skill-category,
+html[data-theme='day'] .contact-card,
+html[data-theme='day'] .proof-item {
+    background: rgba(248, 252, 255, 0.84);
+    border-color: rgba(0, 109, 194, 0.2);
+    box-shadow: 0 10px 26px rgba(43, 89, 138, 0.12);
+}
+
+html[data-theme='day'] .project-outcome {
+    background: rgba(28, 146, 234, 0.08);
+    border-color: rgba(0, 109, 194, 0.22);
+}
+
+html[data-theme='day'] .main-footer {
+    background: rgba(232, 245, 255, 0.93);
+    border-top-color: rgba(0, 109, 194, 0.2);
+}
+
+html[data-theme='day'] .sky-layer {
+    background: linear-gradient(
+        to bottom,
+        #f3faff 0%,
+        #e5f2ff 42%,
+        #d4eaff 72%,
+        #c2dfff 100%
+    );
+}
+
+html[data-theme='day'] .sky-layer::before {
+    opacity: 0.3;
+}
+
+html[data-theme='day'] .sky-layer::after {
+    opacity: 0.26;
+}
+
+html[data-theme='day'] .building {
+    fill: rgba(224, 237, 248, 0.92);
+    stroke: rgba(0, 109, 194, 0.58);
+}
+
+html[data-theme='day'] .window-light {
+    fill: rgba(34, 140, 214, 0.42);
+}
+
+html[data-theme='day'] .particle {
+    box-shadow: 0 0 9px rgba(9, 157, 216, 0.14);
+}
+
+html[data-theme='day'] .theme-toggle {
+    background: rgba(0, 109, 194, 0.08);
+    border-color: rgba(0, 109, 194, 0.3);
+}
+
+html[data-theme='day'] .theme-toggle:hover {
+    background: rgba(0, 109, 194, 0.14);
+    border-color: rgba(0, 109, 194, 0.46);
+}
+
 /* ================================================
    RESPONSIVE DESIGN
    ================================================ */
@@ -1252,6 +1373,15 @@ section[id] {
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
+    }
+
+    .nav-controls {
+        margin-left: auto;
+    }
+
+    .theme-toggle {
+        padding: 8px 10px;
+        font-size: 11px;
     }
 
     .nav-menu {
