@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Template: Projects page meta description for your portfolio (edit this text).">
     <title>Projects - captaincto</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="sky-layer"></div>
     <div class="skyline-layer">
         <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
@@ -43,7 +45,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="projects.html" class="nav-link active" aria-current="page">Projects</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -52,7 +54,7 @@
 
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <main>
+    <main id="mainContent">
         <section class="page-hero">
             <div class="particles" id="particles"></div>
             <div class="container">
@@ -63,6 +65,7 @@
 
         <section class="section-reveal">
             <div class="container">
+                <p class="section-subtitle">Top projects first, then experiments and in-progress builds.</p>
                 <div class="projects-grid">
                     <article class="project-card" id="password-generator">
                         <div class="project-number">01</div>
@@ -73,6 +76,13 @@
                             Best use case: send this to your friends who are constantly forgetting their passwords or 
                             who got hacked multiple times. They'll thank you later, I promise.
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
@@ -80,7 +90,7 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Redis</span>
                         </div>
-                        <a href="#" class="project-link">View on GitHub →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your GitHub URL">View on GitHub →</a>
                     </article>
 
                     <article class="project-card" id="clock">
@@ -92,13 +102,20 @@
                             You can add different cities to see the world through different time zones. 
                             It also shows the present and future weather of the city too!
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Vue.js</span>
                             <span class="tech-tag">Canvas API</span>
                             <span class="tech-tag">OpenWeather API</span>
                             <span class="tech-tag">GSAP</span>
                         </div>
-                        <a href="#" class="project-link">View Live Demo →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your live demo URL">View Live Demo →</a>
                     </article>
 
                     <article class="project-card" id="blog">
@@ -110,13 +127,20 @@
                             posts and stories about anything. I also share updates about my projects and my life, so if you wish to 
                             know what I'm up to, this is the place to be!
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Next.js</span>
                             <span class="tech-tag">MDX</span>
                             <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">Vercel</span>
                         </div>
-                        <a href="#" class="project-link">Read Blog →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your blog URL">Read Blog →</a>
                     </article>
 
                     <article class="project-card">
@@ -127,14 +151,25 @@
                             Integrated payments, order tracking, and exclusive restaurant deals are also available. 
                             What are you waiting for?
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">Cloud Storage</span>
                             <span class="tech-tag">Algolia</span>
                         </div>
-                        <a href="https://thecaptaincto.github.io/izakaya/" class="project-link">Explore Project →</a>
+                        <a href="https://thecaptaincto.github.io/izakaya/" class="project-link" target="_blank" rel="noopener">Explore Project →</a>
                     </article>
+
+                    <div class="projects-divider">
+                        <p class="section-kicker">More Experiments & In Progress</p>
+                    </div>
 
                     <article class="project-card">
                         <div class="project-number">05</div>
@@ -145,13 +180,20 @@
                             (such as budget, packing & bookings), AND collaborate with your travel sidekicks! Have fun! 
                             Paid version with extra features is coming soon!
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Svelte</span>
                             <span class="tech-tag">IndexedDB</span>
                             <span class="tech-tag">PWA</span>
                             <span class="tech-tag">Framer Motion</span>
                         </div>
-                        <a href="#" class="project-link">Try It Out →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your app URL">Try It Out →</a>
                     </article>
 
                     <article class="project-card">
@@ -162,13 +204,20 @@
                             your movements in real time and gives you stats, such as your speed, the number of steps taken, and your path! 
                             You get to burn calories while "doodling" in the real world!
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Storybook</span>
                             <span class="tech-tag">Radix UI</span>
                         </div>
-                        <a href="#" class="project-link">View Documentation →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your documentation URL">View Documentation →</a>
                     </article>
 
                     <article class="project-card">
@@ -179,13 +228,20 @@
                             Art is subjective, right? 
                             Eh, I think you're wasting your time reading this. I'm still working on this part.
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Storybook</span>
                             <span class="tech-tag">Radix UI</span>
                         </div>
-                        <a href="#" class="project-link">View Documentation →</a>
+                        <a href="#" class="project-link template-link" title="Template: Replace with your project URL">View Documentation →</a>
                     </article>
                 </div>
             </div>

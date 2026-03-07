@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Template: Homepage meta description for your portfolio (edit this text).">
     <title>captaincto's Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <!-- Sky Layer (Gradient Background) -->
     <div class="sky-layer" id="skyLayer"></div>
     
@@ -45,7 +47,7 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
@@ -58,7 +60,7 @@
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Main Content -->
-    <main>
+    <main id="mainContent">
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="particles" id="particles"></div>
@@ -82,6 +84,30 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Proof Section -->
+        <section class="quick-proof section-reveal" id="quick-proof">
+            <div class="container">
+                <div class="proof-grid">
+                    <article class="proof-item">
+                        <p class="proof-label">Location</p>
+                        <p class="proof-value">Template: [Your City, Country]</p>
+                    </article>
+                    <article class="proof-item">
+                        <p class="proof-label">Availability</p>
+                        <p class="proof-value">Template: [Open to internships / freelance / full-time]</p>
+                    </article>
+                    <article class="proof-item">
+                        <p class="proof-label">Response Time</p>
+                        <p class="proof-value">Template: [Usually within 24-48 hours]</p>
+                    </article>
+                    <article class="proof-item">
+                        <p class="proof-label">Resume</p>
+                        <p class="proof-value"><a href="#" class="text-link template-link" title="Template: Replace with your resume URL">Template: Download CV</a></p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -134,6 +160,13 @@
                             A secure password generator with a dungeon theme. Generate strong and unique passwords to guard your
                             digital treasures! Passwords are also saved in a vault in case you want to retrieve them later.
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
@@ -150,6 +183,13 @@
                         <p class="project-description">
                             This is a multi-use clock! You can use it as a chronometer, a timer, or as a regular clock. 
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Vue.js</span>
                             <span class="tech-tag">Canvas API</span>
@@ -168,6 +208,13 @@
                             You can read some weird stories, get insights on my life & philosophy, and maybe 
                             learn about something shocking, among other topics.
                         </p>
+                        <div class="project-outcome">
+                            <p class="outcome-label">Template outcome snapshot</p>
+                            <ul class="outcome-list">
+                                <li>Template: Problem solved - [what issue it fixes].</li>
+                                <li>Template: Result - [time saved, user impact, or performance gain].</li>
+                            </ul>
+                        </div>
                         <div class="project-tech">
                             <span class="tech-tag">Next.js</span>
                             <span class="tech-tag">MDX</span>
@@ -272,6 +319,20 @@
             </div>
         </section>
 
+        <!-- Now Section -->
+        <section class="section-reveal" id="now">
+            <div class="container">
+                <div class="content-section">
+                    <p class="section-kicker">Now</p>
+                    <h2 class="section-title">What I'm Building Right Now</h2>
+                    <div class="section-decoration"></div>
+                    <p class="content-text">Template: Current focus project - [name + one sentence].</p>
+                    <p class="content-text">Template: Current learning target - [technology/topic].</p>
+                    <p class="content-text">Template: Next milestone - [what you plan to ship next].</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Philosophy Section -->
         <section class="philosophy section-reveal" id="philosophy">
             <div class="container">
@@ -310,12 +371,17 @@
                     Have an idea? Want to collaborate? Or just want to say hello? 
                     I'm always excited to connect with fellow creators and dreamers.
                 </p>
-                <a href="contact.html" class="cta-button glow">
-                    <span>Get In Touch</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+                <div class="project-actions">
+                    <a href="contact.html" class="cta-button glow">
+                        <span>Get In Touch</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="projects.html" class="cta-button secondary">
+                        <span>Browse Projects</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
