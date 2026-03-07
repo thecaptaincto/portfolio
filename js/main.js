@@ -38,10 +38,12 @@ class Navigation {
         }, 100), { passive: true });
 
         if (this.navToggle && this.navMenu) {
+            this.navToggle.setAttribute('aria-controls', 'navMenu');
             this.navToggle.setAttribute('aria-expanded', 'false');
             this.navToggle.addEventListener('click', () => {
                 const isOpen = this.navMenu.classList.toggle('active');
                 this.navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                document.body.classList.toggle('menu-open', isOpen);
             });
         }
 
@@ -49,6 +51,7 @@ class Navigation {
             link.addEventListener('click', () => {
                 if (this.navMenu) this.navMenu.classList.remove('active');
                 if (this.navToggle) this.navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             });
         });
 
@@ -56,8 +59,26 @@ class Navigation {
             if (event.key === 'Escape' && this.navMenu && this.navMenu.classList.contains('active')) {
                 this.navMenu.classList.remove('active');
                 if (this.navToggle) this.navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             }
         });
+
+        document.addEventListener('click', (event) => {
+            if (!this.navMenu || !this.navToggle) return;
+            if (!this.navMenu.classList.contains('active')) return;
+            if (this.navMenu.contains(event.target) || this.navToggle.contains(event.target)) return;
+            this.navMenu.classList.remove('active');
+            this.navToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+        });
+
+        window.addEventListener('resize', throttle(() => {
+            if (window.innerWidth > 768 && this.navMenu && this.navMenu.classList.contains('active')) {
+                this.navMenu.classList.remove('active');
+                if (this.navToggle) this.navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            }
+        }, 120));
     }
 }
 
@@ -136,7 +157,7 @@ class Skyline {
 class ParticleSystem {
     constructor() {
         this.container = document.getElementById('particles');
-        this.particleCount = prefersReducedMotion() ? 0 : (window.innerWidth < 768 ? 8 : 16);
+        this.particleCount = prefersReducedMotion() ? 0 : (window.innerWidth < 768 ? 12 : 24);
         if (this.container && this.particleCount > 0) this.init();
     }
 
@@ -144,13 +165,17 @@ class ParticleSystem {
         const fragment = document.createDocumentFragment();
         for (let i = 0; i < this.particleCount; i++) {
             const particle = document.createElement('div');
-            particle.className = 'particle';
+            const isOrb = Math.random() > 0.82;
+            particle.className = isOrb ? 'particle orb' : 'particle';
             particle.style.left = `${Math.random() * 100}%`;
-            const size = 2 + Math.random() * 3;
+            const size = isOrb ? (8 + Math.random() * 16) : (1.5 + Math.random() * 3.5);
+            const duration = isOrb ? (28 + Math.random() * 22) : (16 + Math.random() * 16);
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             particle.style.animationDelay = `${Math.random() * 20}s`;
-            particle.style.animationDuration = `${18 + Math.random() * 14}s`;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.setProperty('--duration', `${duration}s`);
+            particle.style.setProperty('--particle-alpha', `${isOrb ? (0.14 + Math.random() * 0.16) : (0.28 + Math.random() * 0.42)}`);
             particle.style.setProperty('--drift', `${-70 + Math.random() * 140}px`);
             fragment.appendChild(particle);
         }
