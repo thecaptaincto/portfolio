@@ -22,6 +22,44 @@ function isInViewport(element) {
     return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 && rect.bottom >= 0;
 }
 
+class ThemeManager {
+    constructor() {
+        this.root = document.documentElement;
+        this.toggleButtons = document.querySelectorAll('.theme-toggle');
+        this.storageKey = 'portfolio-theme';
+        if (this.toggleButtons.length > 0) this.init();
+    }
+
+    init() {
+        const savedTheme = localStorage.getItem(this.storageKey);
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (systemPrefersDark ? 'night' : 'day');
+        this.setTheme(initialTheme, false);
+
+        this.toggleButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const nextTheme = this.root.getAttribute('data-theme') === 'day' ? 'night' : 'day';
+                this.setTheme(nextTheme, true);
+            });
+        });
+    }
+
+    setTheme(theme, persist) {
+        this.root.setAttribute('data-theme', theme);
+        this.toggleButtons.forEach((button) => {
+            const labelNode = button.querySelector('.theme-toggle-label');
+            if (labelNode) {
+                labelNode.textContent = theme === 'day' ? 'Night Mode' : 'Day Mode';
+            }
+            button.setAttribute('aria-pressed', theme === 'day' ? 'true' : 'false');
+        });
+
+        if (persist) {
+            localStorage.setItem(this.storageKey, theme);
+        }
+    }
+}
+
 class Navigation {
     constructor() {
         this.nav = document.getElementById('mainNav');
@@ -380,6 +418,7 @@ class CursorGlow {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
     new Navigation();
     new ScrollProgress();
     new Skyline();
