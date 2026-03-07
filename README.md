@@ -1,118 +1,96 @@
-# Lantern City Portfolio - Fixed Version
+﻿# captaincto Portfolio
 
-A beautiful, fully-functional portfolio website with a night theme, animated lanterns, and stunning gradients.
+Modern static portfolio with a futuristic blue night theme, smooth animations, and strong readability across desktop and mobile.
 
-## ✨ What's Fixed
+## Stack
+- HTML (5 pages)
+- CSS (single shared stylesheet)
+- Vanilla JavaScript (single shared script)
+- No build tools, no framework, no dependencies
 
-- ✅ **Removed time-of-day transitions** - Now uses a consistent dark night theme with subtle gradient variations
-- ✅ **Improved lantern animations** - More realistic with glowing effects and smooth floating
-- ✅ **Added flowing particles** - Subtle background animation that doesn't distract
-- ✅ **Fixed all pages** - About, Skills, and Contact pages now display properly
-- ✅ **Fixed "captaincto" title** - Now displays on one line as requested
-- ✅ **Fixed navigation** - Always visible when scrolling, no disappearing
-- ✅ **Better gradients** - Night sky uses smooth gradient transitions
-- ✅ **Improved readability** - Text colors optimized for the dark theme
-- ✅ **Maintained fonts** - Kept the beautiful Playfair Display and Noto Serif JP fonts
+## Pages
+- `index.html` - home, featured work, quick proof, now section
+- `about.html` - background and values
+- `projects.html` - project list with outcome templates
+- `skills.html` - skills and approach
+- `contact.html` - contact channels and social links
 
-## 🚀 Quick Start
-
-1. Extract the ZIP file
-2. Open `index.html` in your browser
-3. That's it! No build process needed.
-
-## 📁 File Structure
-
-```
-cto-portfolio-fixed/
-├── index.html          # Home page
-├── about.html          # About page
-├── projects.html       # Projects page
-├── skills.html         # Skills page
-├── contact.html        # Contact page
-├── css/
-│   └── styles.css      # All styles in one file
-├── js/
-│   └── main.js         # All JavaScript in one file
-└── README.md           # This file
+## Project Structure
+```text
+cto-portfolio/
+|-- index.html
+|-- about.html
+|-- projects.html
+|-- skills.html
+|-- contact.html
+|-- css/
+|   `-- styles.css
+|-- js/
+|   `-- main.js
+|-- assets/
+|-- README.md
+`-- QUICKSTART.md
 ```
 
-## 🎨 Customization
+## Key Features
+- Futuristic night city visual system (blue gradients, skyline, neon glow)
+- Layered particles with subtle animation
+- Sticky navigation with mobile menu improvements
+- Scroll progress indicator
+- Section reveal and skill bar animations
+- Accessibility improvements:
+  - `Skip to main content`
+  - `aria-current` in nav
+  - focus-visible states
+  - reduced-motion support
 
-### Changing Colors
+## Customize
+### 1) Content
+Edit text directly in HTML files. Template placeholders are labeled with `Template:`.
 
-Edit the CSS variables in `css/styles.css`:
+### 2) Colors
+Edit theme variables at the top of `css/styles.css`:
+- `--night-deep`
+- `--warm-lantern`
+- `--warm-gold`
+- `--cool-neon`
+- `--cool-purple`
 
-```css
-:root {
-    --night-deep: #0a0a1e;
-    --warm-lantern: #ffb347;
-    --cool-neon: #00d9ff;
-    /* etc. */
-}
+### 3) Links
+Replace placeholder links in:
+- `projects.html` (`href="#"` and `.template-link`)
+- `index.html` (resume link in quick proof section)
+- `contact.html` (social/contact profiles)
+
+### 4) Skill bars
+Update `data-skill` values (0-100) in `index.html` and `skills.html`.
+
+## Run Locally
+Open `index.html` in your browser.
+
+Optional (recommended), run a local static server:
+```powershell
+cd C:\Users\spike\cto-portfolio
+python -m http.server 8080
+```
+Then open `http://localhost:8080`.
+
+## Deploy (GitHub Pages)
+1. Push this folder to the correct repo (for example: `thecaptaincto/portfolio`).
+2. In GitHub: `Settings -> Pages`.
+3. Set source to `Deploy from a branch`.
+4. Select `main` branch and `/ (root)` folder.
+5. Save and wait for deployment.
+
+## Notes
+- If your site does not update, verify remote URL with:
+```powershell
+git remote -v
+```
+- If needed, fix it:
+```powershell
+git remote set-url origin https://github.com/thecaptaincto/portfolio.git
 ```
 
-### Updating Content
-
-All content is directly in the HTML files. Just open them in a text editor and modify:
-
-- **Personal info**: Edit the text in each section
-- **Projects**: Update the `.project-card` sections
-- **Skills**: Modify the `data-skill` percentages
-- **Contact**: Update email and social links
-
-### Adding Images
-
-While this version uses SVG graphics and gradients, you can add images:
-
-1. Create an `assets/images/` folder
-2. Add your images
-3. Reference them in HTML: `<img src="assets/images/your-image.jpg">`
-
-## 🌟 Features
-
-- **Responsive Design** - Works on all devices
-- **Smooth Animations** - Lanterns, particles, parallax scrolling
-- **Night Theme** - Beautiful dark color scheme with gradients
-- **Always-visible Navigation** - Sticky nav that stays at the top
-- **Animated Skill Bars** - Reveal on scroll
-- **Window Lights** - Animated building windows in the skyline
-- **Particle System** - Floating particles in the background
-- **Cursor Glow Effect** - Subtle glow follows your cursor (desktop only)
-
-## 📱 Browser Support
-
-Works in all modern browsers:
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers
-
-## 💡 Tips
-
-- The lanterns are animated with CSS - no JavaScript needed for basic floating
-- Particles are dynamically generated on page load
-- All animations respect `prefers-reduced-motion` for accessibility
-- The navigation adapts to mobile with a hamburger menu
-
-## 🔧 Troubleshooting
-
-**Navigation disappears when scrolling:**
-- This should be fixed! Nav has `position: fixed` and `z-index: 1000`
-
-**Pages look blank:**
-- Check that all files are in the correct folders
-- Make sure `styles.css` and `main.js` paths are correct
-
-**Fonts not loading:**
-- You need an internet connection for Google Fonts
-- Or download fonts locally and update the CSS
-
-## 📝 License
-
-Feel free to use this template for your own portfolio! Modify it however you like.
-
----
-
-**Built with care under the lantern light 🏮**
-
-© 2024 captaincto
+## License
+Personal portfolio template. Reuse and modify freely.
