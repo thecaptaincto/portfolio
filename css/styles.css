@@ -1546,3 +1546,111 @@ html[data-theme='day'] .theme-toggle:hover {
         box-shadow: var(--shadow-lift);
     }
 }
+
+/* ─── Hero role subtitle ─────────────────────────────── */
+.hero-role {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cool-neon);
+    opacity: 0.85;
+    margin: -4px 0 18px;
+}
+
+/* ─── Available badge ────────────────────────────────── */
+.available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin: 12px auto 24px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.75); }
+}
+
+/* ─── Project link group (Live Demo + Source Code) ───── */
+.project-link-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.project-link.secondary {
+    color: var(--text-muted, rgba(200,215,235,0.6));
+    font-size: 13px;
+}
+
+.project-link.secondary:hover {
+    color: var(--text-body);
+}
+
+.project-link.muted {
+    color: rgba(255, 170, 80, 0.7);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+/* ─── Skill tier system ──────────────────────────────── */
+.skill-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.tier-group {
+    padding: 24px 28px;
+    background: rgba(19, 19, 42, 0.6);
+    border: 1px solid rgba(77, 199, 255, 0.15);
+    border-radius: 16px;
+}
+
+.tier-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+}
+
+.tier-proficient  { color: #4ade80; border-color: rgba(74, 222, 128, 0.25); }
+.tier-comfortable { color: var(--cool-neon); border-color: rgba(77, 199, 255, 0.25); }
+.tier-learning    { color: var(--warm-lantern); border-color: rgba(255, 170, 80, 0.25); }
+
+.tier-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+html[data-theme='day'] .tier-group {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(88, 130, 168, 0.2);
+}
