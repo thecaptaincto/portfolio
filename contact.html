@@ -1,133 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact captaincto — open to remote design, development, and content roles. Responds within 24–48 hours.">
-  <title>Contact &mdash; captaincto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <script>
-    (function() {
-      var t = localStorage.getItem('cto-theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact captaincto — open to remote design, development, and content roles. Responds within 24–48 hours.">
+    <title>Contact &mdash; captaincto</title>
+    <link rel="canonical" href="https://thecaptaincto.github.io/portfolio/contact.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="scroll-progress" id="scrollProgress"></div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- Navigation -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">captaincto</a>
-      <ul class="nav-links" role="list">
-        <li><a href="index.html"    class="nav-link">Home</a></li>
-        <li><a href="projects.html" class="nav-link">Work</a></li>
-        <li><a href="about.html"    class="nav-link">About</a></li>
-        <li><a href="contact.html"  class="nav-link active" aria-current="page">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
-    <a href="index.html"    class="nav-link">Home</a>
-    <a href="projects.html" class="nav-link">Work</a>
-    <a href="about.html"    class="nav-link">About</a>
-    <a href="contact.html"  class="nav-link active" aria-current="page">Contact</a>
-  </nav>
-
-  <main id="main">
-
-    <!-- Page header -->
-    <div class="page-hero">
-      <div class="container">
-        <span class="label reveal">Contact</span>
-        <h1 class="heading reveal reveal-d1" style="margin-top: 12px;">Say hello.</h1>
-      </div>
+    <div class="sky-layer"></div>
+    <div class="skyline-layer">
+        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
+            <g class="buildings">
+                <rect x="50"   y="350" width="120" height="250" class="building"          data-speed="0.3"/>
+                <rect x="180"  y="300" width="90"  height="300" class="building"          data-speed="0.25"/>
+                <rect x="280"  y="380" width="110" height="220" class="building"          data-speed="0.35"/>
+                <rect x="420"  y="280" width="140" height="320" class="building building-tall"    data-speed="0.4"/>
+                <rect x="570"  y="320" width="100" height="280" class="building"          data-speed="0.3"/>
+                <rect x="680"  y="250" width="160" height="350" class="building building-tall"    data-speed="0.45"/>
+                <rect x="870"  y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
+                <rect x="1060" y="220" width="140" height="380" class="building building-tall"    data-speed="0.48"/>
+                <rect x="1210" y="260" width="120" height="340" class="building"          data-speed="0.42"/>
+                <rect x="1360" y="310" width="150" height="290" class="building"          data-speed="0.38"/>
+                <rect x="1520" y="200" width="170" height="400" class="building building-tall"    data-speed="0.47"/>
+                <rect x="1700" y="340" width="100" height="260" class="building"          data-speed="0.32"/>
+                <rect x="1810" y="370" width="90"  height="230" class="building"          data-speed="0.28"/>
+            </g>
+            <g class="window-lights"></g>
+        </svg>
     </div>
 
-    <section class="section-sm">
-      <div class="container">
-
-        <p class="contact-intro reveal">
-          Open to remote design, development, and content roles.
-          I respond within 24&ndash;48 hours.
-        </p>
-
-        <div class="contact-links-list reveal reveal-d1">
-
-          <!-- Email -->
-          <a href="mailto:tyroneqi.dev@gmail.com" class="contact-link-row">
-            <div class="contact-link-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <span class="contact-link-type">Email</span>
-              <span class="contact-link-value">tyroneqi.dev@gmail.com</span>
-            </div>
-          </a>
-
-          <!-- GitHub -->
-          <a href="https://github.com/thecaptaincto" target="_blank" rel="noopener" class="contact-link-row">
-            <div class="contact-link-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </div>
-            <div>
-              <span class="contact-link-type">GitHub</span>
-              <span class="contact-link-value">@thecaptaincto</span>
-            </div>
-          </a>
-
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/tyrone-qi-1474a63b8/" target="_blank" rel="noopener" class="contact-link-row">
-            <div class="contact-link-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <div>
-              <span class="contact-link-type">LinkedIn</span>
-              <span class="contact-link-value">Connect on LinkedIn</span>
-            </div>
-          </a>
-
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">CAPTAINCTO</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"    class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Work</a></li>
+                <li><a href="about.html"    class="nav-link">About</a></li>
+                <li><a href="contact.html"  class="nav-link active" aria-current="page">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="contact-note reveal reveal-d2">
-          <strong>What I'm open to:</strong> remote UI/UX design, frontend and full-stack
-          development, long-form content and copywriting, and open source contributions.
-          Based in Montréal (ET timezone). Available full-time summer 2026,
-          part-time from September.
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <main id="main-content">
+
+        <section class="page-hero">
+            <div class="particles" id="particles"></div>
+            <div class="container">
+                <h1 class="page-title">Let's Work Together</h1>
+                <p class="page-subtitle">Open to remote roles &mdash; response within 24&ndash;48 hours</p>
+            </div>
+        </section>
+
+        <section class="section-reveal">
+            <div class="container">
+                <div class="content-section">
+                    <p class="content-text contact-intro">
+                        I'm <strong>captaincto</strong>, a UI/UX designer and developer based in
+                        <strong>Montréal, Canada</strong>, open to remote design, development, and content roles.
+                        I communicate clearly in writing, give proper updates without being asked,
+                        and work independently. Send me a message — I'll respond within 24&ndash;48 hours.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-method">Email</h3>
+                            <p class="contact-detail">Best way to reach me — I respond within 24&ndash;48 hours</p>
+                            <a href="mailto:tyroneqi.dev@gmail.com" class="contact-link">tyroneqi.dev@gmail.com</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-method">GitHub</h3>
+                            <p class="contact-detail">See my code and open-source projects</p>
+                            <a href="https://github.com/thecaptaincto" target="_blank" rel="noopener" class="contact-link">@thecaptaincto</a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-method">LinkedIn</h3>
+                            <p class="contact-detail">Professional profile and work history</p>
+                            <a href="https://www.linkedin.com/in/tyrone-qi-1474a63b8/" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/tyrone-qi</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/thecaptaincto" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tyrone-qi-1474a63b8/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title" style="text-align:left;">What I'm Looking For</h2>
+                    <div class="section-decoration" style="margin-left:0;"></div>
+
+                    <p class="content-text">
+                        <strong>Remote Design &amp; Development Roles:</strong> UI/UX design, frontend,
+                        full-stack, or content. Full-time available summer 2026, part-time from September.
+                        ET timezone, async-friendly.
+                    </p>
+                    <p class="content-text">
+                        <strong>Open Source Collaborations:</strong> I love contributing to meaningful
+                        projects and learning from experienced developers.
+                    </p>
+                    <p class="content-text">
+                        <strong>Just Saying Hi:</strong> If you want to talk about code, design, culture,
+                        or anything else — don't hesitate. I like meeting people in the community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">captaincto</p>
+                <p class="footer-subtext">&copy; 2026 captaincto &middot; Montréal</p>
+            </div>
         </div>
+    </footer>
 
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-logo">captaincto</span>
-      <div class="footer-links">
-        <a href="https://github.com/thecaptaincto" target="_blank" rel="noopener" class="footer-link">GitHub</a>
-        <a href="mailto:tyroneqi.dev@gmail.com" class="footer-link">Email</a>
-      </div>
-      <span class="footer-copy">&copy; 2026 captaincto</span>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
