@@ -1,201 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About captaincto — a creative developer from Montréal who started coding to build his own video game and never stopped. 2 years in, shipping projects solo.">
-    <title>About - captaincto</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About captaincto — UI/UX designer and developer from Montréal. Multilingual, async-first, currently building Touch Grass.">
+  <title>About &mdash; captaincto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('cto-theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
-    <a class="skip-link" href="#mainContent">Skip to main content</a>
-    <!-- Sky Layer -->
-    <div class="sky-layer" id="skyLayer"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Skyline Layer -->
-    <div class="skyline-layer" id="skylineLayer">
-        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
-            <g class="buildings">
-                <rect x="50" y="350" width="120" height="250" class="building" data-speed="0.3"/>
-                <rect x="180" y="300" width="90" height="300" class="building" data-speed="0.25"/>
-                <rect x="280" y="380" width="110" height="220" class="building" data-speed="0.35"/>
-                <rect x="420" y="280" width="140" height="320" class="building building-tall" data-speed="0.4"/>
-                <rect x="570" y="320" width="100" height="280" class="building" data-speed="0.3"/>
-                <rect x="680" y="250" width="160" height="350" class="building building-tall" data-speed="0.45"/>
-                <rect x="870" y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
-                <rect x="1060" y="220" width="140" height="380" class="building building-tall" data-speed="0.48"/>
-                <rect x="1210" y="260" width="120" height="340" class="building" data-speed="0.42"/>
-                <rect x="1360" y="310" width="150" height="290" class="building" data-speed="0.38"/>
-                <rect x="1520" y="200" width="170" height="400" class="building building-tall" data-speed="0.47"/>
-                <rect x="1700" y="340" width="100" height="260" class="building" data-speed="0.32"/>
-                <rect x="1810" y="370" width="90" height="230" class="building" data-speed="0.28"/>
-            </g>
-            <g class="window-lights"></g>
-        </svg>
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">captaincto</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Work</a></li>
+        <li><a href="about.html"    class="nav-link active" aria-current="page">About</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
+    <a href="index.html"    class="nav-link">Home</a>
+    <a href="projects.html" class="nav-link">Work</a>
+    <a href="about.html"    class="nav-link active" aria-current="page">About</a>
+    <a href="contact.html"  class="nav-link">Contact</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Page header -->
+    <div class="page-hero">
+      <div class="container">
+        <span class="label reveal">About</span>
+        <h1 class="heading reveal reveal-d1" style="margin-top: 12px;">The person behind the work.</h1>
+      </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">CAPTAINCTO</a>
-            <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle day and night mode" aria-pressed="false">
-                    <span class="theme-toggle-label">Day Mode</span>
-                </button>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
+    <div class="container" style="padding-bottom: var(--section-v);">
+
+      <!-- Lead -->
+      <div class="reveal" style="margin-bottom: 48px;">
+        <p class="about-lead">
+          I'm a UI/UX designer and developer based in Montréal.
+          I design things in Figma, then build them — and I care deeply
+          about the gap between the two.
+        </p>
+        <p class="body" style="max-width: 58ch;">
+          Right now I'm building <strong>Touch Grass</strong> — a travel planning and outdoor wellness app,
+          solo from concept to launch. I start university in September 2026.
+          Open to remote roles in design, development, and content.
+        </p>
+      </div>
+
+      <!-- Origin story -->
+      <div class="about-block reveal">
+        <p class="about-block-label">Origin</p>
+        <div class="about-block-content">
+          <p class="body">
+            It started with game modding. I was making custom maps for Brawl Stars and started
+            asking why everything looked the way it did — which led to learning Figma, which led to
+            learning code, which led to building full products end-to-end.
+          </p>
+          <p class="body">
+            I tried applying to art school once. They said no. Turns out the tools I needed
+            were free all along. Coding is the most expressive creative medium I've found —
+            you design something, and then you make it real.
+          </p>
+          <p class="body">
+            I haven't stopped building since.
+          </p>
         </div>
-    </nav>
+      </div>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Main Content -->
-    <main id="mainContent">
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="particles" id="particles"></div>
-            <div class="container">
-                <h1 class="page-title">About Me</h1>
-                <p class="page-subtitle">Some info related to the guy who made this website</p>
-            </div>
-        </section>
-
-        <!-- My Story Section -->
-        <section class="section-reveal">
-            <div class="container">
-                <div class="content-section">
-                    <h2 class="section-title">My Story</h2>
-                    <div class="section-decoration"></div>
-
-                    <p class="content-text">
-                        I'm <strong>captaincto</strong>, a creative developer based in Montréal, Canada.
-                        I still have a lot to learn, but two years in I can build real projects from scratch — websites,
-                        web apps, interactive tools. I'm passionate about building things that are useful, beautiful,
-                        and thoughtfully made.
-                    </p>
-
-                    <p class="content-text">
-                        It all started with Brawl Stars. I got hooked in 2018, started making custom maps for the game,
-                        and thought: what if I made my own game? I had zero idea what coding was at the time.
-                        But that one question sent me down a rabbit hole that eventually turned into a genuine craft.
-                        Seriously — video games have benefits.
-                    </p>
-
-                    <p class="content-text">
-                        After all that brawling, I'm still debugging, coding, and figuring things out. But now I can build
-                        things like this portfolio. I can create interactive experiences. Creating projects from scratch takes
-                        a lot of time and effort, but seeing something you built actually work? That never gets old.
-                    </p>
-                </div>
-
-                <div class="content-section">
-                    <h2 class="section-title">How I Work</h2>
-                    <div class="section-decoration"></div>
-
-                    <p class="content-text">
-                        <strong>Async by default.</strong> I communicate clearly in writing, give proper status updates,
-                        and don't need someone to check in every hour to stay on track. Remote work suits me well —
-                        I've been working this way from the start.
-                    </p>
-
-                    <p class="content-text">
-                        <strong>Self-motivated and independent.</strong> Most of my projects were built solo, from idea to
-                        deployed product. I'm comfortable figuring things out on my own, reading documentation,
-                        and problem-solving without a lifeline.
-                    </p>
-
-                    <p class="content-text">
-                        <strong>I ship things.</strong> I don't build forever. Projects get finished, pushed, and shared.
-                        I care about the quality of what I put out there — clean code, tested features,
-                        a product that people can actually use.
-                    </p>
-                </div>
-
-                <div class="content-section">
-                    <h2 class="section-title">What I Value</h2>
-                    <div class="section-decoration"></div>
-
-                    <p class="content-text">
-                        <strong>Quality products.</strong> I like to build things that are enjoyable and that can last.
-                        If I do something, I'll do it properly. That includes writing clean code, designing user-friendly interfaces,
-                        and testing my product many times to make sure it's my best work.
-                    </p>
-
-                    <p class="content-text">
-                        <strong>Learning as a lifelong goal.</strong> Learning doesn't stop after school. I believe you can
-                        learn something new every day. If you think I'm wrong about something, tell me —
-                        constructive feedback is always appreciated.
-                    </p>
-
-                    <p class="content-text">
-                        <strong>Helping the community.</strong> I want my projects to be useful beyond myself —
-                        for the people I work with, and the broader community. Giving back matters to me.
-                    </p>
-                </div>
-
-                <div class="content-section">
-                    <h2 class="section-title">Beyond Computers</h2>
-                    <div class="section-decoration"></div>
-
-                    <p class="content-text">
-                        I like writing and reading about all sorts of things.
-                        Trying out activities outside of my comfort zone is always exciting —
-                        geography, history, travel, culture, art, music, cooking, acting.
-                        A lot of those interests trace back, somehow, to Brawl Stars.
-                    </p>
-
-                    <p class="content-text">
-                        Walking around a new place is one of my favorite things to do.
-                        Someday I'd like to visit every continent. But going to Antarctica to see the penguins
-                        costs at least $10,000 — which is a lot of V-Bucks. I'll get there eventually.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="contact-teaser section-reveal">
-            <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="contact-text">
-                    Looking for a remote developer who communicates well, ships independently, and cares about the work?
-                    I'd love to hear about what you're building.
-                </p>
-                <a href="contact.html" class="cta-button">
-                    <span>Hire Me</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">CTO Productions</p>
-                <p class="footer-subtext">© 2026 captaincto. A product of CTO Productions.</p>
-            </div>
+      <!-- How I work -->
+      <div class="about-block reveal">
+        <p class="about-block-label">How I work</p>
+        <div class="about-block-content">
+          <p class="body">
+            <strong>Async by default.</strong> I communicate clearly in writing, give proper status
+            updates, and don't need someone to check in every hour to stay on track.
+            Remote work suits me — I've been working this way from the start.
+          </p>
+          <p class="body">
+            <strong>Design first.</strong> Before writing a line of code on any feature, I prototype
+            it. Information architecture, user flows, wireframes, high-fidelity screens — I do all
+            of it in Figma before opening VS Code.
+          </p>
+          <p class="body">
+            <strong>I ship things.</strong> Projects get finished, pushed, and shared. I care about
+            the quality of what I put out — clean code, tested features, something people can
+            actually use.
+          </p>
         </div>
-    </footer>
+      </div>
 
-    <script src="js/main.js"></script>
+      <!-- What I value -->
+      <div class="about-block reveal">
+        <p class="about-block-label">What I value</p>
+        <div class="about-block-content">
+          <p class="body">
+            Products that don't get in the way. Interfaces that feel obvious in hindsight.
+            Work that holds up under scrutiny — not just visually, but technically.
+          </p>
+          <p class="body">
+            Learning is a constant. If you think I'm wrong about something, tell me.
+            Constructive feedback is always appreciated.
+          </p>
+        </div>
+      </div>
+
+      <!-- Beyond the screen -->
+      <div class="about-block reveal">
+        <p class="about-block-label">Beyond the screen</p>
+        <div class="about-block-content">
+          <p class="body">
+            Walking around a new city is one of my favourite things to do — which is partly why
+            I'm building an app that nudges people to go outside. I write, read widely, and try
+            new things whenever I can: geography, history, travel, music, cooking, acting.
+          </p>
+          <p class="body">
+            Antarctica is on the list. The penguins will have to wait — last I checked, it costs
+            more than a reasonable number of V-Bucks.
+          </p>
+
+          <div class="quote-block" style="margin-top: 28px;">
+            <p>"Do you like eggs?"</p>
+            <p>"Yes, I do."</p>
+            <p>"What kinds of eggs do you like?"</p>
+            <p>"All of them. But if I had to choose one, Egg Pam would have to be my favorite."</p>
+            <p><em>*smirks* "You have good taste, my friend."</em></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="about-block reveal">
+        <p class="about-block-label">Languages</p>
+        <div class="about-block-content">
+          <div class="langs-list">
+            <div class="lang-item">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">French</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Mandarin Chinese</span>
+              <span class="lang-level">Native (spoken)</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Spanish</span>
+              <span class="lang-level">Conversational</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Japanese</span>
+              <span class="lang-level">Intermediate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-section reveal">
+        <p class="skills-section-title">Skills &amp; tools</p>
+        <div class="skills-groups">
+
+          <div class="skill-group">
+            <p class="skill-group-title">Design</p>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UI/UX Design</span>
+              <span class="tag">Graphic Design</span>
+              <span class="tag">Visual Storytelling</span>
+              <span class="tag">Framer</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">Frontend</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">Backend</p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">Content</p>
+            <div class="tags">
+              <span class="tag">Long-form Writing</span>
+              <span class="tag">Copywriting</span>
+              <span class="tag">Video Production</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-title">Tools</p>
+            <div class="tags">
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">Google Workspace</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="container">
+        <h2 class="heading reveal">Let's connect.</h2>
+        <p class="body reveal reveal-d1">
+          Open to remote design, development, and content roles.
+          I respond within 24&ndash;48 hours.
+        </p>
+        <div class="cta-actions reveal reveal-d2">
+          <a href="contact.html" class="btn btn-primary">Get in touch</a>
+          <a href="projects.html" class="btn btn-outline">See my work</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">captaincto</span>
+      <div class="footer-links">
+        <a href="https://github.com/thecaptaincto" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+      <span class="footer-copy">&copy; 2026 captaincto</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
