@@ -393,6 +393,21 @@ document.addEventListener('DOMContentLoaded', () => {
     safeInit('cursor-glow',   () => { new CursorGlow(); });
     safeInit('scroll-engine', () => { new ScrollEngine(modules); });
 
+    document.querySelectorAll('.discord-username, .discord-copy-btn').forEach(el => {
+        el.addEventListener('click', () => {
+            navigator.clipboard.writeText('@captaincto').then(() => {
+                const original = el.textContent;
+                if (el.classList.contains('discord-username')) {
+                    el.textContent = 'Copied!';
+                    setTimeout(() => { el.textContent = original; }, 2000);
+                } else {
+                    el.title = 'Copied!';
+                    setTimeout(() => { el.title = 'Copy @captaincto'; }, 2000);
+                }
+            });
+        });
+    });
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
