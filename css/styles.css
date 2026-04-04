@@ -1007,6 +1007,14 @@ section {
     border-color: rgba(77, 199, 255, 0.6);
     box-shadow: 0 0 0 3px rgba(77, 199, 255, 0.1);
 }
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px rgba(10, 10, 35, 0.95) inset;
+    -webkit-text-fill-color: var(--text-main);
+    caret-color: var(--text-main);
+    border-color: rgba(77, 199, 255, 0.3);
+}
 .form-textarea { resize: vertical; min-height: 140px; }
 .form-submit { margin-top: 8px; }
 .form-success {
