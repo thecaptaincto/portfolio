@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Work by captaincto — UI/UX design and development projects including Touch Grass, Flux, CTO Blogductions, and more.">
+    <title>Work &mdash; captaincto</title>
+    <link rel="canonical" href="https://thecaptaincto.github.io/portfolio/projects.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="sky-layer"></div>
+    <div class="skyline-layer">
+        <svg viewBox="0 0 1920 600" preserveAspectRatio="xMidYMax slice" class="skyline-svg">
+            <g class="buildings">
+                <rect x="50"   y="350" width="120" height="250" class="building"          data-speed="0.3"/>
+                <rect x="180"  y="300" width="90"  height="300" class="building"          data-speed="0.25"/>
+                <rect x="280"  y="380" width="110" height="220" class="building"          data-speed="0.35"/>
+                <rect x="420"  y="280" width="140" height="320" class="building building-tall"    data-speed="0.4"/>
+                <rect x="570"  y="320" width="100" height="280" class="building"          data-speed="0.3"/>
+                <rect x="680"  y="250" width="160" height="350" class="building building-tall"    data-speed="0.45"/>
+                <rect x="870"  y="180" width="180" height="420" class="building building-tallest" data-speed="0.5"/>
+                <rect x="1060" y="220" width="140" height="380" class="building building-tall"    data-speed="0.48"/>
+                <rect x="1210" y="260" width="120" height="340" class="building"          data-speed="0.42"/>
+                <rect x="1360" y="310" width="150" height="290" class="building"          data-speed="0.38"/>
+                <rect x="1520" y="200" width="170" height="400" class="building building-tall"    data-speed="0.47"/>
+                <rect x="1700" y="340" width="100" height="260" class="building"          data-speed="0.32"/>
+                <rect x="1810" y="370" width="90"  height="230" class="building"          data-speed="0.28"/>
+            </g>
+            <g class="window-lights"></g>
+        </svg>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">CAPTAINCTO</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"    class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link active" aria-current="page">Work</a></li>
+                <li><a href="about.html"    class="nav-link">About</a></li>
+                <li><a href="contact.html"  class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <main id="main-content">
+
+        <section class="page-hero">
+            <div class="particles" id="particles"></div>
+            <div class="container">
+                <h1 class="page-title">My Work</h1>
+                <p class="page-subtitle">Designed and built, start to finish</p>
+            </div>
+        </section>
+
+        <section class="section-reveal">
+            <div class="container">
+
+                <div class="projects-grid">
+
+                    <!-- Touch Grass — featured -->
+                    <article class="project-card featured" id="touch-grass" style="grid-column: 1 / -1;">
+                        <div class="project-number">01</div>
+                        <span class="project-status in-progress">
+                            <span class="project-status-dot"></span>Launching soon
+                        </span>
+                        <h2 class="project-title">Touch Grass</h2>
+                        <p class="project-description">
+                            Two products in one, built solo from concept to launch. The <strong style="color:var(--warm-lantern)">travel planner</strong> handles
+                            full itinerary building with drag-and-drop scheduling and conflict detection, an interactive map
+                            powered by Google Places, budget tracker, accommodation organiser, phrase guide, collaboration
+                            tools, PDF export, and .ics calendar export. The <strong style="color:var(--warm-lantern)">Touch Grass</strong> side delivers daily
+                            outdoor activity suggestions matched to your mood and available time — no guilt mechanics,
+                            no streaks. AI features powered by Claude on paid tiers. Available in 12 languages
+                            with 21 collectible themes. Designed from scratch — information architecture and user flows
+                            through high-fidelity screens — then built end-to-end.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Drag-and-drop itinerary builder with conflict detection</li>
+                            <li>Interactive map with Google Places integration</li>
+                            <li>Budget tracker, accommodation organiser, phrase guide</li>
+                            <li>Collaboration, PDF export, .ics calendar export, public Explore feed</li>
+                            <li>AI suggestions via Claude (paid tiers) &middot; 12 languages &middot; 21 themes</li>
+                            <li>Full design system: IA, flows, wireframes, high-fidelity screens</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Claude AI</span>
+                            <span class="tech-tag">Google Maps API</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Framer Motion</span>
+                            <span class="tech-tag">next-intl</span>
+                        </div>
+                        <div class="project-link-group">
+                            <span class="project-link muted">Live URL coming soon</span>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio -->
+                    <article class="project-card" id="portfolio">
+                        <div class="project-number">02</div>
+                        <span class="project-status live">
+                            <span class="project-status-dot"></span>Live
+                        </span>
+                        <h2 class="project-title">Portfolio Site</h2>
+                        <p class="project-description">
+                            This site. Designed and built from scratch in HTML/CSS/JS. Night-city aesthetic
+                            with animated skyline, parallax lanterns, and smooth scroll interactions.
+                            Deployed via GitHub Pages.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                        <div class="project-link-group">
+                            <a href="https://github.com/thecaptaincto/portfolio" target="_blank" rel="noopener" class="project-link">Repo link &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- CTO Blogductions -->
+                    <article class="project-card" id="blog">
+                        <div class="project-number">03</div>
+                        <span class="project-status live">
+                            <span class="project-status-dot"></span>Live
+                        </span>
+                        <h2 class="project-title">CTO Blogductions</h2>
+                        <p class="project-description">
+                            Personal blog with long-form writing on travel, technology, and design.
+                            Part dev journal, part opinionated storytelling. Built on Next.js with MDX
+                            for content, Tailwind for styling, deployed on Vercel.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">MDX</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-link-group">
+                            <a href="https://thecaptaincto.github.io/cto-blog/" target="_blank" rel="noopener" class="project-link">View site &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- DnD Dice Roller -->
+                    <article class="project-card">
+                        <div class="project-number">04</div>
+                        <span class="project-status live">
+                            <span class="project-status-dot"></span>Live
+                        </span>
+                        <h2 class="project-title">DnD Dice Roller</h2>
+                        <p class="project-description">
+                            A dice roller for Dungeons &amp; Dragons. Rolls any combination of dice
+                            types — d4 through d20 — with a clean interface. Because sometimes you
+                            don't have a bag of dice nearby.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-link-group">
+                            <a href="https://thecaptaincto.github.io/dnd-dice-roller/" target="_blank" rel="noopener" class="project-link">View project &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Password Generator -->
+                    <article class="project-card">
+                        <div class="project-number">05</div>
+                        <span class="project-status completed">
+                            <span class="project-status-dot"></span>Completed
+                        </span>
+                        <h2 class="project-title">Password Generator</h2>
+                        <p class="project-description">
+                            Client-side password manager with a local vault — no account, no server
+                            storing your secrets. Dungeon-themed for no particular reason. Send it to
+                            a friend who keeps reusing "password123."
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-link-group">
+                            <a href="https://thecaptaincto.github.io/password-generator/" target="_blank" rel="noopener" class="project-link">View project &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Divider -->
+                    <div class="projects-divider">
+                        <p class="section-kicker">In progress</p>
+                    </div>
+
+                    <!-- Flux -->
+                    <article class="project-card" id="flux">
+                        <div class="project-number">06</div>
+                        <span class="project-status in-progress">
+                            <span class="project-status-dot"></span>In Progress
+                        </span>
+                        <h2 class="project-title">Flux</h2>
+                        <p class="project-description">
+                            Android fitness tracking app built as my final CEGEP integrating project with a school
+                            partner. Logs movement in real time, tracks steps and speed, and visualises your path
+                            on a map — a focused, minimal take on what Strava does.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Android Studio</span>
+                        </div>
+                        <div class="project-link-group">
+                            <span class="project-link muted">Link coming soon</span>
+                        </div>
+                    </article>
+
+                    <!-- Clock -->
+                    <article class="project-card">
+                        <div class="project-number">07</div>
+                        <span class="project-status in-progress">
+                            <span class="project-status-dot"></span>In Progress
+                        </span>
+                        <h2 class="project-title">Clock</h2>
+                        <p class="project-description">
+                            World clock with stopwatch, countdown timer, and live weather per city.
+                            Useful for remote teams who always forget what time it is for the other person.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Canvas API</span>
+                            <span class="tech-tag">OpenWeather API</span>
+                        </div>
+                        <div class="project-link-group">
+                            <a href="https://thecaptaincto.github.io/clock/" target="_blank" rel="noopener" class="project-link">View project &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-teaser section-reveal">
+            <div class="container">
+                <h2 class="section-title">Have a Project in Mind?</h2>
+                <p class="contact-text">
+                    I'm open to interesting collaborations — design, development, or both.
+                    Let's build something worth shipping.
+                </p>
+                <a href="contact.html" class="cta-button">
+                    <span>Start a conversation</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">captaincto</p>
+                <p class="footer-subtext">&copy; 2026 captaincto &middot; Montréal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
