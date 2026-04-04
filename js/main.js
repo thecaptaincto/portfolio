@@ -393,5 +393,39 @@ document.addEventListener('DOMContentLoaded', () => {
     safeInit('cursor-glow',   () => { new CursorGlow(); });
     safeInit('scroll-engine', () => { new ScrollEngine(modules); });
 
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.form-submit');
+            btn.disabled = true;
+            btn.querySelector('span').textContent = 'Sending…';
+            try {
+                const res = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    contactForm.innerHTML = '<p class="form-success">Message sent — I\'ll get back to you within 24–48 hours.</p>';
+                } else {
+                    btn.disabled = false;
+                    btn.querySelector('span').textContent = 'Send message';
+                    const err = document.querySelector('.form-error') || document.createElement('p');
+                    err.className = 'form-error';
+                    err.textContent = 'Something went wrong. Try emailing me directly.';
+                    contactForm.appendChild(err);
+                }
+            } catch {
+                btn.disabled = false;
+                btn.querySelector('span').textContent = 'Send message';
+                const err = document.querySelector('.form-error') || document.createElement('p');
+                err.className = 'form-error';
+                err.textContent = 'Something went wrong. Try emailing me directly.';
+                contactForm.appendChild(err);
+            }
+        });
+    }
+
     modules = {};
 });
