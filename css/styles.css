@@ -1017,6 +1017,8 @@ section {
 }
 .form-textarea { resize: vertical; min-height: 140px; }
 .form-submit { margin-top: 8px; }
+.form-submit:disabled { opacity: 0.4; cursor: not-allowed; filter: grayscale(0.4); }
+.form-submit:disabled:hover { transform: none; box-shadow: none; }
 .form-success {
     text-align: center;
     color: var(--warm-lantern);
